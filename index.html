@@ -26,11 +26,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;overflow-x:hidden}
-
-/* SIDEBAR */
 .sidebar{width:240px;background:var(--sidebar-bg);display:flex;flex-direction:column;position:fixed;height:100vh;z-index:100;transition:.3s}
 .sidebar-logo{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.07)}
-.sidebar-logo .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px}
+.sidebar-logo .logo-icon{width:40px;height:40px;background:transparent;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px}
 .sidebar-logo h2{color:#fff;font-size:18px;font-weight:800;letter-spacing:-0.3px}
 .sidebar-logo p{color:rgba(255,255,255,0.4);font-size:11px;margin-top:2px}
 .sidebar-nav{flex:1;padding:16px 12px;overflow-y:auto}
@@ -42,15 +40,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .sidebar-footer{padding:16px;border-top:1px solid rgba(255,255,255,0.07)}
 .company-badge{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px;font-size:11px;color:rgba(255,255,255,0.5)}
 .company-badge strong{display:block;color:rgba(255,255,255,0.8);font-size:12px;margin-bottom:2px}
-
-/* MAIN */
 .main{margin-left:240px;flex:1;min-height:100vh}
 .topbar{background:#fff;border-bottom:1px solid var(--border);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
 .topbar h1{font-size:20px;font-weight:700;color:var(--text)}
 .topbar-actions{display:flex;gap:10px;align-items:center}
 .page-content{padding:28px 32px;min-height:calc(100vh - 64px)}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:9px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;border:none;transition:.2s;text-decoration:none}
 .btn-primary{background:var(--primary);color:#fff}
 .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,87,255,0.3)}
@@ -65,8 +59,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-warning:hover{background:var(--warning);color:#fff}
 .btn-ghost{background:transparent;color:var(--text-muted);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
-
-/* CARDS */
 .card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow)}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
 .stat-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:20px;position:relative;overflow:hidden;transition:.2s}
@@ -74,8 +66,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .stat-card .stat-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
 .stat-card .stat-val{font-size:26px;font-weight:800;color:var(--text);letter-spacing:-0.5px}
 .stat-card .stat-label{font-size:12.5px;color:var(--text-muted);margin-top:3px;font-weight:500}
-
-/* TABLE */
 .table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);background:#fff}
 table{width:100%;border-collapse:collapse}
 thead{background:var(--bg)}
@@ -89,8 +79,6 @@ tr:hover td{background:#FAFBFF}
 .badge-danger{background:#FEE2E2;color:#DC2626}
 .badge-info{background:#DBEAFE;color:#2563EB}
 .badge-gray{background:#F3F4F6;color:#6B7280}
-
-/* FORMS */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .form-group{display:flex;flex-direction:column;gap:6px}
@@ -98,8 +86,6 @@ tr:hover td{background:#FAFBFF}
 .form-group input,.form-group select,.form-group textarea{padding:10px 13px;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:13.5px;color:var(--text);outline:none;transition:.2s;background:#fff}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,87,255,0.08)}
 .form-group textarea{resize:vertical;min-height:80px}
-
-/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(5,11,26,0.65);z-index:1000;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;backdrop-filter:blur(4px)}
 .modal-overlay.open{display:flex}
 .modal{background:#fff;border-radius:18px;width:100%;max-width:760px;box-shadow:0 24px 80px rgba(0,0,0,0.2);animation:modalIn .25s ease}
@@ -111,8 +97,6 @@ tr:hover td{background:#FAFBFF}
 @keyframes modalIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .close-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted);width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:7px}
 .close-btn:hover{background:var(--bg);color:var(--text)}
-
-/* ITEMS TABLE IN FORM */
 .items-table{width:100%;border-collapse:collapse;margin-top:8px}
 .items-table th{background:#F8FAFF;padding:9px 10px;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:.5px;border:1px solid var(--border)}
 .items-table td{padding:7px 8px;border:1px solid var(--border);vertical-align:top}
@@ -123,48 +107,20 @@ tr:hover td{background:#FAFBFF}
 .totals-box{background:#F8FAFF;border-radius:10px;padding:16px;margin-top:12px}
 .total-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13.5px;color:var(--text-muted)}
 .total-row.grand{font-size:16px;font-weight:800;color:var(--text);border-top:1.5px solid var(--border);margin-top:6px;padding-top:10px}
-
-/* SEARCH BAR */
 .search-bar{position:relative}
 .search-bar input{padding:9px 13px 9px 36px;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:13.5px;outline:none;transition:.2s;background:#fff;min-width:220px}
 .search-bar input:focus{border-color:var(--primary)}
 .search-bar .search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text-muted)}
-
-/* PAGE SECTIONS */
 .section{display:none}
 .section.active{display:block}
-
-/* EMPTY STATE */
 .empty-state{text-align:center;padding:60px 20px}
 .empty-state .empty-icon{font-size:52px;margin-bottom:14px}
 .empty-state h3{font-size:18px;font-weight:700;margin-bottom:6px}
 .empty-state p{color:var(--text-muted);font-size:14px}
-
-/* VIEW MODAL */
-.preview-header{background:linear-gradient(135deg,#0057FF,#0040CC);color:#fff;padding:28px 32px;border-radius:14px 14px 0 0}
-.preview-header .co-name{font-size:22px;font-weight:800;letter-spacing:-0.3px}
-.preview-header .co-details{font-size:12px;opacity:.8;margin-top:6px;line-height:1.8}
-.doc-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 32px;border-bottom:1px solid var(--border)}
-.doc-meta-item label{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:.7px}
-.doc-meta-item p{font-size:14px;font-weight:600;margin-top:3px}
-.preview-body{padding:20px 32px 24px}
-.preview-items{width:100%;border-collapse:collapse}
-.preview-items th{background:#F0F4FF;padding:10px 12px;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:.5px;text-align:left}
-.preview-items td{padding:11px 12px;font-size:13px;border-bottom:1px solid var(--border)}
-.preview-items tr:last-child td{border-bottom:none}
-.preview-totals{margin-top:16px;display:flex;justify-content:flex-end}
-.preview-totals-box{min-width:280px;background:#F8FAFF;border-radius:10px;padding:14px 18px}
-.pt-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;color:var(--text-muted)}
-.pt-row.grand{font-size:15px;font-weight:800;color:var(--text);border-top:2px solid var(--border);margin-top:8px;padding-top:10px}
-.preview-footer{padding:14px 32px 20px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border)}
-
-/* TOAST */
 .toast{position:fixed;bottom:24px;right:24px;background:#1A1F36;color:#fff;padding:13px 20px;border-radius:11px;font-size:13.5px;font-weight:500;z-index:9999;transform:translateY(100px);opacity:0;transition:.3s;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.success{background:#059669}
 .toast.error{background:var(--danger)}
-
-/* PRINT STYLES */
 @media print{
   .no-print{display:none!important}
   body{background:#fff}
@@ -172,25 +128,19 @@ tr:hover td{background:#FAFBFF}
   .modal{box-shadow:none;max-width:100%;border-radius:0}
   .modal-header,.modal-footer{display:none}
 }
-
-/* DASHBOARD CHARTS */
 .recent-list{display:flex;flex-direction:column;gap:10px}
 .recent-item{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg);border-radius:10px;font-size:13px}
 .recent-item .ri-name{font-weight:600}
 .recent-item .ri-meta{color:var(--text-muted);font-size:12px;margin-top:2px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .section-title{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
-
-/* HIGHLIGHT */
 .highlight-blue{color:var(--primary);font-weight:700;font-family:'DM Mono',monospace}
 </style>
 </head>
 <body>
-
-<!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-icon">❄️</div>
+    <div class="logo-icon" style="background:transparent;padding:0;overflow:visible"><img src="data:image/jpeg;base64,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" style="width:42px;height:32px;object-fit:contain"></div>
     <h2>Air Cool</h2>
     <p>Billing Software v1.0</p>
   </div>
@@ -199,7 +149,7 @@ tr:hover td{background:#FAFBFF}
     <div class="nav-item active" onclick="showPage('dashboard')"><span class="icon">🏠</span> Dashboard</div>
     <div class="nav-section">Business</div>
     <div class="nav-item" onclick="showPage('customers')"><span class="icon">👥</span> Customers</div>
-    <div class="nav-item" onclick="showPage('products')"><span class="icon">🛠️</span> Products & Services</div>
+    <div class="nav-item" onclick="showPage('products')"><span class="icon">🛠️</span> Products &amp; Services</div>
     <div class="nav-section">Documents</div>
     <div class="nav-item" onclick="showPage('quotations')"><span class="icon">📋</span> Quotations</div>
     <div class="nav-item" onclick="showPage('invoices')"><span class="icon">🧾</span> Invoices</div>
@@ -213,8 +163,6 @@ tr:hover td{background:#FAFBFF}
     </div>
   </div>
 </aside>
-
-<!-- MAIN CONTENT -->
 <div class="main">
   <div class="topbar">
     <h1 id="page-title">Dashboard</h1>
@@ -222,118 +170,47 @@ tr:hover td{background:#FAFBFF}
       <span style="font-size:13px;color:var(--text-muted)">📍 SEC 41, Noida</span>
     </div>
   </div>
-
   <div class="page-content">
-
-    <!-- DASHBOARD -->
     <div id="page-dashboard" class="section active">
       <div class="stat-grid">
-        <div class="stat-card">
-          <div class="stat-icon" style="background:#EEF4FF">👥</div>
-          <div class="stat-val" id="dash-customers">0</div>
-          <div class="stat-label">Total Customers</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background:#FEF3C7">📋</div>
-          <div class="stat-val" id="dash-quotations">0</div>
-          <div class="stat-label">Quotations</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background:#D1FAE5">🧾</div>
-          <div class="stat-val" id="dash-invoices">0</div>
-          <div class="stat-label">Invoices</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon" style="background:#FCE7F3">💰</div>
-          <div class="stat-val" id="dash-revenue">₹0</div>
-          <div class="stat-label">Total Revenue</div>
-        </div>
+        <div class="stat-card"><div class="stat-icon" style="background:#EEF4FF">👥</div><div class="stat-val" id="dash-customers">0</div><div class="stat-label">Total Customers</div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#FEF3C7">📋</div><div class="stat-val" id="dash-quotations">0</div><div class="stat-label">Quotations</div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#D1FAE5">🧾</div><div class="stat-val" id="dash-invoices">0</div><div class="stat-label">Invoices</div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#FCE7F3">💰</div><div class="stat-val" id="dash-revenue">₹0</div><div class="stat-label">Total Revenue</div></div>
       </div>
       <div class="grid-2">
-        <div class="card">
-          <div class="section-title">Recent Invoices</div>
-          <div class="recent-list" id="dash-recent-invoices">
-            <div class="empty-state"><div class="empty-icon">🧾</div><p>No invoices yet</p></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="section-title">Recent Quotations</div>
-          <div class="recent-list" id="dash-recent-quotations">
-            <div class="empty-state"><div class="empty-icon">📋</div><p>No quotations yet</p></div>
-          </div>
-        </div>
+        <div class="card"><div class="section-title">Recent Invoices</div><div class="recent-list" id="dash-recent-invoices"><div class="empty-state"><div class="empty-icon">🧾</div><p>No invoices yet</p></div></div></div>
+        <div class="card"><div class="section-title">Recent Quotations</div><div class="recent-list" id="dash-recent-quotations"><div class="empty-state"><div class="empty-icon">📋</div><p>No quotations yet</p></div></div></div>
       </div>
     </div>
-
-    <!-- CUSTOMERS -->
     <div id="page-customers" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-        <div class="search-bar">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="cust-search" placeholder="Search customers..." oninput="renderCustomers()">
-        </div>
+        <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="cust-search" placeholder="Search customers..." oninput="renderCustomers()"></div>
         <button class="btn btn-primary" onclick="openModal('modal-customer')">➕ Add Customer</button>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>#</th><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>GSTIN</th><th>Actions</th></tr></thead>
-          <tbody id="customers-table-body"></tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>GSTIN</th><th>Actions</th></tr></thead><tbody id="customers-table-body"></tbody></table></div>
     </div>
-
-    <!-- PRODUCTS & SERVICES -->
     <div id="page-products" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-        <div class="search-bar">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="prod-search" placeholder="Search products/services..." oninput="renderProducts()">
-        </div>
+        <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="prod-search" placeholder="Search products/services..." oninput="renderProducts()"></div>
         <button class="btn btn-primary" onclick="openModal('modal-product')">➕ Add Item</button>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>#</th><th>Name</th><th>Type</th><th>HSN/SAC</th><th>Unit</th><th>Rate (₹)</th><th>GST %</th><th>Actions</th></tr></thead>
-          <tbody id="products-table-body"></tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Type</th><th>HSN/SAC</th><th>Unit</th><th>Rate (₹)</th><th>GST %</th><th>Actions</th></tr></thead><tbody id="products-table-body"></tbody></table></div>
     </div>
-
-    <!-- QUOTATIONS -->
     <div id="page-quotations" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-        <div class="search-bar">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="quot-search" placeholder="Search quotations..." oninput="renderQuotations()">
-        </div>
+        <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="quot-search" placeholder="Search quotations..." oninput="renderQuotations()"></div>
         <button class="btn btn-primary" onclick="openQuotationModal()">➕ New Quotation</button>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Quot. No.</th><th>Date</th><th>Customer</th><th>Valid Till</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
-          <tbody id="quotations-table-body"></tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table><thead><tr><th>Quot. No.</th><th>Date</th><th>Customer</th><th>Valid Till</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="quotations-table-body"></tbody></table></div>
     </div>
-
-    <!-- INVOICES -->
     <div id="page-invoices" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-        <div class="search-bar">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="inv-search" placeholder="Search invoices..." oninput="renderInvoices()">
-        </div>
+        <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="inv-search" placeholder="Search invoices..." oninput="renderInvoices()"></div>
         <button class="btn btn-primary" onclick="openInvoiceModal()">➕ New Invoice</button>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Inv. No.</th><th>Date</th><th>Customer</th><th>Due Date</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
-          <tbody id="invoices-table-body"></tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table><thead><tr><th>Inv. No.</th><th>Date</th><th>Customer</th><th>Due Date</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="invoices-table-body"></tbody></table></div>
     </div>
-
-    <!-- SETTINGS -->
     <div id="page-settings" class="section">
       <div class="card" style="max-width:640px">
         <h3 style="font-size:16px;font-weight:700;margin-bottom:20px">Company Information</h3>
@@ -348,24 +225,18 @@ tr:hover td{background:#FAFBFF}
           <div class="form-group"><label>Bank Name</label><input id="s-bank" placeholder="e.g. SBI, HDFC..."></div>
           <div class="form-group"><label>Account Number</label><input id="s-account" placeholder="Account number"></div>
           <div class="form-group"><label>IFSC Code</label><input id="s-ifsc" placeholder="IFSC Code"></div>
-          <div class="form-group"><label>Terms & Conditions</label><textarea id="s-terms">1. Payment due within 30 days.&#10;2. Warranty: 30 days on all services.&#10;3. Service charges are non-refundable.</textarea></div>
+          <div class="form-group"><label>Terms &amp; Conditions</label><textarea id="s-terms">1. Payment due within 30 days.&#10;2. Warranty: 30 days on all services.&#10;3. Service charges are non-refundable.</textarea></div>
         </div>
         <button class="btn btn-primary" style="margin-top:20px" onclick="saveSettings()">💾 Save Settings</button>
       </div>
     </div>
-
   </div>
 </div>
-
-<!-- ======================== MODALS ======================== -->
 
 <!-- Customer Modal -->
 <div class="modal-overlay" id="modal-customer">
   <div class="modal">
-    <div class="modal-header">
-      <h2 id="cust-modal-title">Add Customer</h2>
-      <button class="close-btn" onclick="closeModal('modal-customer')">✕</button>
-    </div>
+    <div class="modal-header"><h2 id="cust-modal-title">Add Customer</h2><button class="close-btn" onclick="closeModal('modal-customer')">✕</button></div>
     <div class="modal-body">
       <div class="form-grid">
         <div class="form-group"><label>Full Name *</label><input id="c-name" placeholder="Customer name"></div>
@@ -375,68 +246,43 @@ tr:hover td{background:#FAFBFF}
         <div class="form-group" style="grid-column:1/-1"><label>Address</label><textarea id="c-address" placeholder="Full address (optional)"></textarea></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modal-customer')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveCustomer()">💾 Save Customer</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('modal-customer')">Cancel</button><button class="btn btn-primary" onclick="saveCustomer()">💾 Save Customer</button></div>
   </div>
 </div>
 
 <!-- Product Modal -->
 <div class="modal-overlay" id="modal-product">
   <div class="modal">
-    <div class="modal-header">
-      <h2 id="prod-modal-title">Add Product / Service</h2>
-      <button class="close-btn" onclick="closeModal('modal-product')">✕</button>
-    </div>
+    <div class="modal-header"><h2 id="prod-modal-title">Add Product / Service</h2><button class="close-btn" onclick="closeModal('modal-product')">✕</button></div>
     <div class="modal-body">
       <div class="form-grid">
-        <div class="form-group" style="grid-column:1/-1"><label>Name *</label><input id="p-name" placeholder="e.g. AC Service & Cleaning"></div>
-        <div class="form-group"><label>Type *</label>
-          <select id="p-type"><option value="service">Service</option><option value="product">Product</option></select>
-        </div>
-        <div class="form-group"><label>Unit *</label>
-          <select id="p-unit"><option value="Nos">Nos</option><option value="Job">Job</option><option value="Hr">Hr</option><option value="Kg">Kg</option><option value="Ltr">Ltr</option><option value="Set">Set</option><option value="Pcs">Pcs</option></select>
-        </div>
+        <div class="form-group" style="grid-column:1/-1"><label>Name *</label><input id="p-name" placeholder="e.g. AC Service &amp; Cleaning"></div>
+        <div class="form-group"><label>Type *</label><select id="p-type"><option value="service">Service</option><option value="product">Product</option></select></div>
+        <div class="form-group"><label>Unit *</label><select id="p-unit"><option value="Nos">Nos</option><option value="Job">Job</option><option value="Hr">Hr</option><option value="Kg">Kg</option><option value="Ltr">Ltr</option><option value="Set">Set</option><option value="Pcs">Pcs</option></select></div>
         <div class="form-group"><label>HSN / SAC Code</label><input id="p-hsn" placeholder="e.g. 998719"></div>
         <div class="form-group"><label>Rate (₹) *</label><input type="number" id="p-rate" placeholder="0.00"></div>
-        <div class="form-group"><label>GST %</label>
-          <select id="p-gst"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select>
-        </div>
+        <div class="form-group"><label>GST %</label><select id="p-gst"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div>
         <div class="form-group" style="grid-column:1/-1"><label>Description</label><textarea id="p-desc" placeholder="Optional description"></textarea></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modal-product')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveProduct()">💾 Save Item</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('modal-product')">Cancel</button><button class="btn btn-primary" onclick="saveProduct()">💾 Save Item</button></div>
   </div>
 </div>
 
 <!-- Quotation Modal -->
 <div class="modal-overlay" id="modal-quotation">
   <div class="modal modal-lg">
-    <div class="modal-header">
-      <h2 id="quot-modal-title">New Quotation</h2>
-      <button class="close-btn" onclick="closeModal('modal-quotation')">✕</button>
-    </div>
+    <div class="modal-header"><h2 id="quot-modal-title">New Quotation</h2><button class="close-btn" onclick="closeModal('modal-quotation')">✕</button></div>
     <div class="modal-body">
       <div class="form-grid-3" style="margin-bottom:18px">
         <div class="form-group"><label>Quotation No. *</label><input id="q-no" readonly style="background:#F8FAFF"></div>
         <div class="form-group"><label>Date *</label><input type="date" id="q-date"></div>
         <div class="form-group"><label>Valid Till *</label><input type="date" id="q-valid"></div>
-        <div class="form-group" style="grid-column:1/3"><label>Customer *</label>
-          <select id="q-customer"><option value="">-- Select Customer --</option></select>
-        </div>
-        <div class="form-group"><label>Status</label>
-          <select id="q-status"><option value="Draft">Draft</option><option value="Sent">Sent</option><option value="Accepted">Accepted</option><option value="Rejected">Rejected</option></select>
-        </div>
+        <div class="form-group" style="grid-column:1/3"><label>Customer *</label><select id="q-customer"><option value="">-- Select Customer --</option></select></div>
+        <div class="form-group"><label>Status</label><select id="q-status"><option value="Draft">Draft</option><option value="Sent">Sent</option><option value="Accepted">Accepted</option><option value="Rejected">Rejected</option></select></div>
       </div>
       <div style="font-size:13px;font-weight:700;margin-bottom:8px;color:var(--text)">Items</div>
-      <table class="items-table" id="q-items-table">
-        <thead><tr><th style="width:30%">Product/Service</th><th style="width:22%">Description</th><th style="width:7%">Qty</th><th style="width:10%">Rate</th><th style="width:8%">Disc%</th><th style="width:8%">GST%</th><th style="width:10%">Amount</th><th style="width:5%"></th></tr></thead>
-        <tbody id="q-items-body"></tbody>
-      </table>
+      <table class="items-table" id="q-items-table"><thead><tr><th style="width:30%">Product/Service</th><th style="width:22%">Description</th><th style="width:7%">Qty</th><th style="width:10%">Rate</th><th style="width:8%">Disc%</th><th style="width:8%">GST%</th><th style="width:10%">Amount</th><th style="width:5%"></th></tr></thead><tbody id="q-items-body"></tbody></table>
       <button class="add-row-btn" onclick="addItemRow('q-items-body','q')">+ Add Item</button>
       <div class="totals-box" id="q-totals">
         <div class="total-row"><span>Subtotal</span><span id="q-subtotal">₹0.00</span></div>
@@ -446,37 +292,24 @@ tr:hover td{background:#FAFBFF}
       </div>
       <div class="form-group" style="margin-top:14px"><label>Notes / Terms</label><textarea id="q-notes" placeholder="Additional notes or terms..."></textarea></div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modal-quotation')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveQuotation()">💾 Save Quotation</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('modal-quotation')">Cancel</button><button class="btn btn-primary" onclick="saveQuotation()">💾 Save Quotation</button></div>
   </div>
 </div>
 
 <!-- Invoice Modal -->
 <div class="modal-overlay" id="modal-invoice">
   <div class="modal modal-lg">
-    <div class="modal-header">
-      <h2 id="inv-modal-title">New Invoice</h2>
-      <button class="close-btn" onclick="closeModal('modal-invoice')">✕</button>
-    </div>
+    <div class="modal-header"><h2 id="inv-modal-title">New Invoice</h2><button class="close-btn" onclick="closeModal('modal-invoice')">✕</button></div>
     <div class="modal-body">
       <div class="form-grid-3" style="margin-bottom:18px">
         <div class="form-group"><label>Invoice No. *</label><input id="i-no" readonly style="background:#F8FAFF"></div>
         <div class="form-group"><label>Date *</label><input type="date" id="i-date"></div>
         <div class="form-group"><label>Due Date *</label><input type="date" id="i-due"></div>
-        <div class="form-group" style="grid-column:1/3"><label>Customer *</label>
-          <select id="i-customer"><option value="">-- Select Customer --</option></select>
-        </div>
-        <div class="form-group"><label>Payment Status</label>
-          <select id="i-status"><option value="Unpaid">Unpaid</option><option value="Partial">Partial</option><option value="Paid">Paid</option></select>
-        </div>
+        <div class="form-group" style="grid-column:1/3"><label>Customer *</label><select id="i-customer"><option value="">-- Select Customer --</option></select></div>
+        <div class="form-group"><label>Payment Status</label><select id="i-status"><option value="Unpaid">Unpaid</option><option value="Partial">Partial</option><option value="Paid">Paid</option></select></div>
       </div>
       <div style="font-size:13px;font-weight:700;margin-bottom:8px;color:var(--text)">Items</div>
-      <table class="items-table" id="i-items-table">
-        <thead><tr><th style="width:30%">Product/Service</th><th style="width:22%">Description</th><th style="width:7%">Qty</th><th style="width:10%">Rate</th><th style="width:8%">Disc%</th><th style="width:8%">GST%</th><th style="width:10%">Amount</th><th style="width:5%"></th></tr></thead>
-        <tbody id="i-items-body"></tbody>
-      </table>
+      <table class="items-table" id="i-items-table"><thead><tr><th style="width:30%">Product/Service</th><th style="width:22%">Description</th><th style="width:7%">Qty</th><th style="width:10%">Rate</th><th style="width:8%">Disc%</th><th style="width:8%">GST%</th><th style="width:10%">Amount</th><th style="width:5%"></th></tr></thead><tbody id="i-items-body"></tbody></table>
       <button class="add-row-btn" onclick="addItemRow('i-items-body','i')">+ Add Item</button>
       <div class="totals-box" id="i-totals">
         <div class="total-row"><span>Subtotal</span><span id="i-subtotal">₹0.00</span></div>
@@ -486,10 +319,7 @@ tr:hover td{background:#FAFBFF}
       </div>
       <div class="form-group" style="margin-top:14px"><label>Notes / Terms</label><textarea id="i-notes" placeholder="Additional notes or terms..."></textarea></div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modal-invoice')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveInvoice()">💾 Save Invoice</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('modal-invoice')">Cancel</button><button class="btn btn-primary" onclick="saveInvoice()">💾 Save Invoice</button></div>
   </div>
 </div>
 
@@ -507,11 +337,9 @@ tr:hover td{background:#FAFBFF}
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ======================== DATA STORE ========================
 let DB = {
   company: {
     name: 'Air Cool',
@@ -524,22 +352,17 @@ let DB = {
     bank: '', account: '', ifsc: '',
     terms: '1. Payment due within 30 days.\n2. Warranty: 30 days on all services.\n3. Service charges are non-refundable.'
   },
-  customers: [],
-  products: [],
-  quotations: [],
-  invoices: [],
+  customers: [], products: [], quotations: [], invoices: [],
   counters: { quotation: 1, invoice: 1 }
 };
-
+const LOGO_URI = 'data:image/jpeg;base64,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';
 function loadDB() {
   const saved = localStorage.getItem('aircool_db');
   if (saved) { try { DB = JSON.parse(saved); } catch(e){} }
   else { seedDefaultData(); }
   syncSettingsForm();
 }
-
 function saveDB() { localStorage.setItem('aircool_db', JSON.stringify(DB)); }
-
 function seedDefaultData() {
   DB.products = [
     { id: uid(), name: 'AC Service & Cleaning', type: 'service', unit: 'Job', hsn: '998719', rate: 500, gst: 18, desc: 'Complete AC cleaning and servicing' },
@@ -553,15 +376,12 @@ function seedDefaultData() {
   ];
   saveDB();
 }
-
 function uid() { return Date.now().toString(36) + Math.random().toString(36).substr(2,5); }
-function fmt(n) { return '₹' + parseFloat(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+function fmt(n) { return '\u20b9' + parseFloat(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
 function today() { return new Date().toISOString().split('T')[0]; }
 function addDays(d,n) { let dt=new Date(d); dt.setDate(dt.getDate()+n); return dt.toISOString().split('T')[0]; }
 function fmtDate(d) { if(!d) return '-'; let dt=new Date(d); return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
 function numToWords(n){const a=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'],b=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];n=Math.round(n);if(n===0)return'Zero';function hw(n){let s='';if(n>=1000){s+=hw(Math.floor(n/1000))+' Thousand ';n%=1000}if(n>=100){s+=a[Math.floor(n/100)]+' Hundred ';n%=100}if(n>=20){s+=b[Math.floor(n/10)]+' ';n%=10}if(n>0)s+=a[n]+' ';return s}return hw(n).trim()+' Only';}
-
-// ======================== NAVIGATION ========================
 function showPage(page) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -575,66 +395,43 @@ function showPage(page) {
   if(page==='quotations') renderQuotations();
   if(page==='invoices') renderInvoices();
 }
-
-// ======================== MODALS ========================
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 document.querySelectorAll('.modal-overlay').forEach(m => {
   m.addEventListener('click', e => { if(e.target===m) m.classList.remove('open'); });
 });
-
-// ======================== TOAST ========================
 function toast(msg, type='success') {
   const t = document.getElementById('toast');
-  t.textContent = (type==='success'?'✅ ':'❌ ') + msg;
+  t.textContent = (type==='success'?'\u2705 ':'\u274c ') + msg;
   t.className = 'toast show ' + type;
   setTimeout(() => t.classList.remove('show'), 3000);
 }
-
-// ======================== DASHBOARD ========================
 function updateDashboard() {
   document.getElementById('dash-customers').textContent = DB.customers.length;
   document.getElementById('dash-quotations').textContent = DB.quotations.length;
   document.getElementById('dash-invoices').textContent = DB.invoices.length;
   const rev = DB.invoices.filter(i=>i.status==='Paid').reduce((s,i)=>s+i.grand,0);
   document.getElementById('dash-revenue').textContent = fmt(rev);
-
   const ri = document.getElementById('dash-recent-invoices');
   const rq = document.getElementById('dash-recent-quotations');
   const inv5 = [...DB.invoices].reverse().slice(0,5);
   const quo5 = [...DB.quotations].reverse().slice(0,5);
-
   ri.innerHTML = inv5.length ? inv5.map(i => {
     const c = DB.customers.find(x=>x.id===i.customerId);
-    return `<div class="recent-item"><div><div class="ri-name">${i.no}</div><div class="ri-meta">${c?c.name:'—'} · ${fmtDate(i.date)}</div></div><div><span class="badge badge-${i.status==='Paid'?'success':i.status==='Partial'?'warning':'danger'}">${i.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(i.grand)}</div></div></div>`;
-  }).join('') : '<div class="empty-state"><div class="empty-icon">🧾</div><p>No invoices yet</p></div>';
-
+    return `<div class="recent-item"><div><div class="ri-name">${i.no}</div><div class="ri-meta">${c?c.name:'\u2014'} \u00b7 ${fmtDate(i.date)}</div></div><div><span class="badge badge-${i.status==='Paid'?'success':i.status==='Partial'?'warning':'danger'}">${i.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(i.grand)}</div></div></div>`;
+  }).join('') : '<div class="empty-state"><div class="empty-icon">\ud83e\uddfe</div><p>No invoices yet</p></div>';
   rq.innerHTML = quo5.length ? quo5.map(q => {
     const c = DB.customers.find(x=>x.id===q.customerId);
-    return `<div class="recent-item"><div><div class="ri-name">${q.no}</div><div class="ri-meta">${c?c.name:'—'} · ${fmtDate(q.date)}</div></div><div><span class="badge badge-${q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray'}">${q.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(q.grand)}</div></div></div>`;
-  }).join('') : '<div class="empty-state"><div class="empty-icon">📋</div><p>No quotations yet</p></div>';
+    return `<div class="recent-item"><div><div class="ri-name">${q.no}</div><div class="ri-meta">${c?c.name:'\u2014'} \u00b7 ${fmtDate(q.date)}</div></div><div><span class="badge badge-${q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray'}">${q.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(q.grand)}</div></div></div>`;
+  }).join('') : '<div class="empty-state"><div class="empty-icon">\ud83d\udccb</div><p>No quotations yet</p></div>';
 }
-
-// ======================== CUSTOMERS ========================
 let editCustomerId = null;
 function renderCustomers() {
   const q = document.getElementById('cust-search').value.toLowerCase();
   const list = DB.customers.filter(c => (c.name+c.phone+c.email+c.address).toLowerCase().includes(q));
   const tbody = document.getElementById('customers-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">👥</div><h3>No Customers Found</h3><p>Add your first customer to get started</p></div></td></tr>`; return; }
-  tbody.innerHTML = list.map((c,i) => `
-    <tr>
-      <td>${i+1}</td>
-      <td><strong>${c.name}</strong></td>
-      <td><a href="tel:${c.phone}" style="color:var(--primary)">${c.phone}</a></td>
-      <td>${c.email||'—'}</td>
-      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.address}">${c.address||'—'}</td>
-      <td><span class="badge badge-info" style="font-family:'DM Mono'">${c.gstin||'—'}</span></td>
-      <td>
-        <button class="btn btn-sm btn-outline" onclick="editCustomer('${c.id}')">✏️</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteCustomer('${c.id}')">🗑️</button>
-      </td>
-    </tr>`).join('');
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83d\udc65</div><h3>No Customers Found</h3><p>Add your first customer to get started</p></div></td></tr>`; return; }
+  tbody.innerHTML = list.map((c,i) => `<tr><td>${i+1}</td><td><strong>${c.name}</strong></td><td><a href="tel:${c.phone}" style="color:var(--primary)">${c.phone}</a></td><td>${c.email||'\u2014'}</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.address}">${c.address||'\u2014'}</td><td><span class="badge badge-info" style="font-family:'DM Mono'">${c.gstin||'\u2014'}</span></td><td><button class="btn btn-sm btn-outline" onclick="editCustomer('${c.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteCustomer('${c.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`).join('');
 }
 function openModal_customer_new() {
   editCustomerId = null;
@@ -643,8 +440,7 @@ function openModal_customer_new() {
   openModal('modal-customer');
 }
 function editCustomer(id) {
-  const c = DB.customers.find(x=>x.id===id);
-  if(!c) return;
+  const c = DB.customers.find(x=>x.id===id); if(!c) return;
   editCustomerId = id;
   document.getElementById('cust-modal-title').textContent = 'Edit Customer';
   document.getElementById('c-name').value = c.name||'';
@@ -659,14 +455,8 @@ function saveCustomer() {
   const phone = document.getElementById('c-phone').value.trim();
   if(!name||!phone) { toast('Name and Phone are required','error'); return; }
   const data = { name, phone, email: document.getElementById('c-email').value.trim(), gstin: document.getElementById('c-gstin').value.trim(), address: document.getElementById('c-address').value.trim() };
-  if(editCustomerId) {
-    const idx = DB.customers.findIndex(x=>x.id===editCustomerId);
-    DB.customers[idx] = { ...DB.customers[idx], ...data };
-    toast('Customer updated');
-  } else {
-    DB.customers.push({ id: uid(), ...data });
-    toast('Customer added');
-  }
+  if(editCustomerId) { const idx = DB.customers.findIndex(x=>x.id===editCustomerId); DB.customers[idx] = { ...DB.customers[idx], ...data }; toast('Customer updated'); }
+  else { DB.customers.push({ id: uid(), ...data }); toast('Customer added'); }
   saveDB(); closeModal('modal-customer'); renderCustomers();
 }
 function deleteCustomer(id) {
@@ -674,32 +464,16 @@ function deleteCustomer(id) {
   DB.customers = DB.customers.filter(c=>c.id!==id);
   saveDB(); renderCustomers(); toast('Customer deleted');
 }
-
-// ======================== PRODUCTS ========================
 let editProductId = null;
 function renderProducts() {
   const q = document.getElementById('prod-search').value.toLowerCase();
   const list = DB.products.filter(p => (p.name+p.type+p.hsn).toLowerCase().includes(q));
   const tbody = document.getElementById('products-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🛠️</div><h3>No Items Found</h3></div></td></tr>`; return; }
-  tbody.innerHTML = list.map((p,i) => `
-    <tr>
-      <td>${i+1}</td>
-      <td><strong>${p.name}</strong><div style="font-size:11.5px;color:var(--text-muted)">${p.desc||''}</div></td>
-      <td><span class="badge badge-${p.type==='service'?'info':'success'}">${p.type==='service'?'🛠️ Service':'📦 Product'}</span></td>
-      <td><span class="highlight-blue">${p.hsn||'—'}</span></td>
-      <td>${p.unit}</td>
-      <td><strong>${fmt(p.rate)}</strong></td>
-      <td>${p.gst}%</td>
-      <td>
-        <button class="btn btn-sm btn-outline" onclick="editProduct('${p.id}')">✏️</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteProduct('${p.id}')">🗑️</button>
-      </td>
-    </tr>`).join('');
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">\ud83d\udee0\ufe0f</div><h3>No Items Found</h3></div></td></tr>`; return; }
+  tbody.innerHTML = list.map((p,i) => `<tr><td>${i+1}</td><td><strong>${p.name}</strong><div style="font-size:11.5px;color:var(--text-muted)">${p.desc||''}</div></td><td><span class="badge badge-${p.type==='service'?'info':'success'}">${p.type==='service'?'\ud83d\udee0\ufe0f Service':'\ud83d\udce6 Product'}</span></td><td><span class="highlight-blue">${p.hsn||'\u2014'}</span></td><td>${p.unit}</td><td><strong>${fmt(p.rate)}</strong></td><td>${p.gst}%</td><td><button class="btn btn-sm btn-outline" onclick="editProduct('${p.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteProduct('${p.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`).join('');
 }
 function editProduct(id) {
-  const p = DB.products.find(x=>x.id===id);
-  if(!p) return;
+  const p = DB.products.find(x=>x.id===id); if(!p) return;
   editProductId = id;
   document.getElementById('prod-modal-title').textContent = 'Edit Item';
   document.getElementById('p-name').value = p.name||'';
@@ -716,14 +490,8 @@ function saveProduct() {
   const rate = parseFloat(document.getElementById('p-rate').value);
   if(!name||isNaN(rate)) { toast('Name and Rate are required','error'); return; }
   const data = { name, type: document.getElementById('p-type').value, unit: document.getElementById('p-unit').value, hsn: document.getElementById('p-hsn').value.trim(), rate, gst: parseInt(document.getElementById('p-gst').value), desc: document.getElementById('p-desc').value.trim() };
-  if(editProductId) {
-    const idx = DB.products.findIndex(x=>x.id===editProductId);
-    DB.products[idx] = { ...DB.products[idx], ...data };
-    toast('Item updated');
-  } else {
-    DB.products.push({ id: uid(), ...data });
-    toast('Item added');
-  }
+  if(editProductId) { const idx = DB.products.findIndex(x=>x.id===editProductId); DB.products[idx] = { ...DB.products[idx], ...data }; toast('Item updated'); }
+  else { DB.products.push({ id: uid(), ...data }); toast('Item added'); }
   editProductId = null;
   document.getElementById('prod-modal-title').textContent = 'Add Product / Service';
   saveDB(); closeModal('modal-product'); renderProducts();
@@ -733,41 +501,23 @@ function deleteProduct(id) {
   DB.products = DB.products.filter(p=>p.id!==id);
   saveDB(); renderProducts(); toast('Item deleted');
 }
-
-// ======================== ITEM ROWS (shared for Q & I) ========================
 function addItemRow(tbodyId, prefix) {
   const tbody = document.getElementById(tbodyId);
   const rowId = uid();
-  const prodOptions = DB.products.map(p => `<option value="${p.id}" data-rate="${p.rate}" data-gst="${p.gst}">${p.name}</option>`).join('');
+  const prodOptions = DB.products.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
   const tr = document.createElement('tr');
   tr.dataset.rowId = rowId;
-  tr.innerHTML = `
-    <td><select onchange="fillRowFromProduct(this,'${prefix}','${rowId}')" class="prod-select-${prefix}">
-      <option value="">-- Select --</option>${prodOptions}
-    </select></td>
-    <td><input type="text" placeholder="Description"></td>
-    <td><input type="number" value="1" min="1" oninput="calcRow(this,'${prefix}')" class="qty-input"></td>
-    <td><input type="number" value="0" min="0" step="0.01" oninput="calcRow(this,'${prefix}')" class="rate-input"></td>
-    <td><input type="number" value="0" min="0" max="100" oninput="calcRow(this,'${prefix}')" class="disc-input"></td>
-    <td><select onchange="calcRow(this,'${prefix}')" class="gst-sel">
-      <option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option>
-    </select></td>
-    <td><input type="number" value="0" readonly style="background:#F8FAFF;font-weight:700" class="amt-input"></td>
-    <td><button onclick="this.closest('tr').remove();calcTotals('${prefix}')" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:16px">🗑️</button></td>`;
+  tr.innerHTML = `<td><select onchange="fillRowFromProduct(this,'${prefix}','${rowId}')" class="prod-select-${prefix}"><option value="">-- Select --</option>${prodOptions}</select></td><td><input type="text" placeholder="Description"></td><td><input type="number" value="1" min="1" oninput="calcRow(this,'${prefix}')" class="qty-input"></td><td><input type="number" value="0" min="0" step="0.01" oninput="calcRow(this,'${prefix}')" class="rate-input"></td><td><input type="number" value="0" min="0" max="100" oninput="calcRow(this,'${prefix}')" class="disc-input"></td><td><select onchange="calcRow(this,'${prefix}')" class="gst-sel"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></td><td><input type="number" value="0" readonly style="background:#F8FAFF;font-weight:700" class="amt-input"></td><td><button onclick="this.closest('tr').remove();calcTotals('${prefix}')" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:16px">\ud83d\uddd1\ufe0f</button></td>`;
   tbody.appendChild(tr);
 }
-
 function fillRowFromProduct(sel, prefix, rowId) {
-  const prodId = sel.value;
-  const p = DB.products.find(x=>x.id===prodId);
-  if(!p) return;
+  const p = DB.products.find(x=>x.id===sel.value); if(!p) return;
   const tr = sel.closest('tr');
   tr.querySelector('.rate-input').value = p.rate;
   tr.querySelector('.gst-sel').value = p.gst;
   tr.querySelector('input[placeholder="Description"]').value = p.desc||'';
   calcRow(sel, prefix);
 }
-
 function calcRow(el, prefix) {
   const tr = el.closest('tr');
   const qty = parseFloat(tr.querySelector('.qty-input').value)||0;
@@ -775,76 +525,45 @@ function calcRow(el, prefix) {
   const disc = parseFloat(tr.querySelector('.disc-input').value)||0;
   const gst = parseFloat(tr.querySelector('.gst-sel').value)||0;
   const base = qty * rate * (1 - disc/100);
-  const total = base + (base * gst/100);
-  tr.querySelector('.amt-input').value = total.toFixed(2);
+  tr.querySelector('.amt-input').value = (base + base*gst/100).toFixed(2);
   calcTotals(prefix);
 }
-
 function calcTotals(prefix) {
   const rows = document.querySelectorAll(`#${prefix}-items-body tr`);
-  let subtotal=0, discTotal=0, gstTotal=0;
-  rows.forEach(tr => {
-    const qty = parseFloat(tr.querySelector('.qty-input')?.value)||0;
-    const rate = parseFloat(tr.querySelector('.rate-input')?.value)||0;
-    const disc = parseFloat(tr.querySelector('.disc-input')?.value)||0;
-    const gst = parseFloat(tr.querySelector('.gst-sel')?.value)||0;
-    const base = qty*rate;
-    const discAmt = base*disc/100;
-    const afterDisc = base - discAmt;
-    subtotal += base;
-    discTotal += discAmt;
-    gstTotal += afterDisc*gst/100;
-  });
-  const grand = subtotal - discTotal + gstTotal;
-  document.getElementById(`${prefix}-subtotal`).textContent = fmt(subtotal);
-  document.getElementById(`${prefix}-discount`).textContent = '-'+fmt(discTotal);
-  document.getElementById(`${prefix}-gst-total`).textContent = fmt(gstTotal);
-  document.getElementById(`${prefix}-grand`).textContent = fmt(grand);
-}
-
-function getItemsFromTable(prefix) {
-  const rows = document.querySelectorAll(`#${prefix}-items-body tr`);
-  const items = [];
-  rows.forEach(tr => {
-    const sel = tr.querySelector('select');
-    const inputs = tr.querySelectorAll('input');
-    const prodId = sel?.value||'';
-    const p = DB.products.find(x=>x.id===prodId);
-    const desc = inputs[0]?.value||'';
-    const qty = parseFloat(tr.querySelector('.qty-input')?.value)||0;
-    const rate = parseFloat(tr.querySelector('.rate-input')?.value)||0;
-    const disc = parseFloat(tr.querySelector('.disc-input')?.value)||0;
-    const gst = parseFloat(tr.querySelector('.gst-sel')?.value)||0;
-    const base = qty*rate*(1-disc/100);
-    const gstAmt = base*gst/100;
-    items.push({ prodId, name: p?.name||desc||'Item', desc, qty, rate, disc, gst, base, gstAmt, total: base+gstAmt, unit: p?.unit||'Job', hsn: p?.hsn||'' });
-  });
-  return items;
-}
-
-function getGrandFromTable(prefix) {
-  const rows = document.querySelectorAll(`#${prefix}-items-body tr`);
   let s=0,d=0,g=0;
-  rows.forEach(tr=>{
-    const qty=parseFloat(tr.querySelector('.qty-input')?.value)||0;
-    const rate=parseFloat(tr.querySelector('.rate-input')?.value)||0;
-    const disc=parseFloat(tr.querySelector('.disc-input')?.value)||0;
-    const gst=parseFloat(tr.querySelector('.gst-sel')?.value)||0;
-    const base=qty*rate; const da=base*disc/100; const ad=base-da;
+  rows.forEach(tr => {
+    const qty=parseFloat(tr.querySelector('.qty-input')?.value)||0, rate=parseFloat(tr.querySelector('.rate-input')?.value)||0, disc=parseFloat(tr.querySelector('.disc-input')?.value)||0, gst=parseFloat(tr.querySelector('.gst-sel')?.value)||0;
+    const base=qty*rate, da=base*disc/100, ad=base-da;
     s+=base; d+=da; g+=ad*gst/100;
+  });
+  document.getElementById(`${prefix}-subtotal`).textContent = fmt(s);
+  document.getElementById(`${prefix}-discount`).textContent = '-'+fmt(d);
+  document.getElementById(`${prefix}-gst-total`).textContent = fmt(g);
+  document.getElementById(`${prefix}-grand`).textContent = fmt(s-d+g);
+}
+function getItemsFromTable(prefix) {
+  return [...document.querySelectorAll(`#${prefix}-items-body tr`)].map(tr => {
+    const sel=tr.querySelector('select'), p=DB.products.find(x=>x.id===sel?.value)||{};
+    const qty=parseFloat(tr.querySelector('.qty-input')?.value)||0, rate=parseFloat(tr.querySelector('.rate-input')?.value)||0, disc=parseFloat(tr.querySelector('.disc-input')?.value)||0, gst=parseFloat(tr.querySelector('.gst-sel')?.value)||0;
+    const base=qty*rate*(1-disc/100), gstAmt=base*gst/100;
+    return { prodId:sel?.value||'', name:p.name||'Item', desc:tr.querySelector('input[placeholder="Description"]')?.value||'', qty, rate, disc, gst, base, gstAmt, total:base+gstAmt, unit:p.unit||'Job', hsn:p.hsn||'' };
+  });
+}
+function getGrandFromTable(prefix) {
+  let s=0,d=0,g=0;
+  document.querySelectorAll(`#${prefix}-items-body tr`).forEach(tr=>{
+    const qty=parseFloat(tr.querySelector('.qty-input')?.value)||0,rate=parseFloat(tr.querySelector('.rate-input')?.value)||0,disc=parseFloat(tr.querySelector('.disc-input')?.value)||0,gst=parseFloat(tr.querySelector('.gst-sel')?.value)||0;
+    const base=qty*rate,da=base*disc/100,ad=base-da; s+=base;d+=da;g+=ad*gst/100;
   });
   return {subtotal:s,discount:d,gstTotal:g,grand:s-d+g};
 }
-
 function populateCustomerDropdowns() {
-  const opts = '<option value="">-- Select Customer --</option>' + DB.customers.map(c=>`<option value="${c.id}">${c.name} — ${c.phone}</option>`).join('');
+  const opts = '<option value="">-- Select Customer --</option>' + DB.customers.map(c=>`<option value="${c.id}">${c.name} \u2014 ${c.phone}</option>`).join('');
   document.getElementById('q-customer').innerHTML = opts;
   document.getElementById('i-customer').innerHTML = opts;
 }
-
-// ======================== QUOTATIONS ========================
 let editQuotId = null;
-function openQuotationModal(fromInvCopy) {
+function openQuotationModal() {
   editQuotId = null;
   document.getElementById('quot-modal-title').textContent = 'New Quotation';
   document.getElementById('q-no').value = 'QT-' + String(DB.counters.quotation).padStart(4,'0');
@@ -853,14 +572,10 @@ function openQuotationModal(fromInvCopy) {
   document.getElementById('q-status').value = 'Draft';
   document.getElementById('q-notes').value = DB.company.terms;
   document.getElementById('q-items-body').innerHTML = '';
-  calcTotals('q');
-  populateCustomerDropdowns();
-  openModal('modal-quotation');
-  addItemRow('q-items-body','q');
+  calcTotals('q'); populateCustomerDropdowns(); openModal('modal-quotation'); addItemRow('q-items-body','q');
 }
 function editQuotation(id) {
-  const q = DB.quotations.find(x=>x.id===id);
-  if(!q) return;
+  const q = DB.quotations.find(x=>x.id===id); if(!q) return;
   editQuotId = id;
   document.getElementById('quot-modal-title').textContent = 'Edit Quotation';
   document.getElementById('q-no').value = q.no;
@@ -873,10 +588,8 @@ function editQuotation(id) {
   document.getElementById('q-items-body').innerHTML = '';
   q.items.forEach(item => {
     addItemRow('q-items-body','q');
-    const rows = document.querySelectorAll('#q-items-body tr');
-    const tr = rows[rows.length-1];
-    const sel = tr.querySelector('select');
-    if(item.prodId) { sel.value = item.prodId; }
+    const tr = [...document.querySelectorAll('#q-items-body tr')].pop();
+    if(item.prodId) tr.querySelector('select').value = item.prodId;
     tr.querySelector('input[placeholder="Description"]').value = item.desc||'';
     tr.querySelector('.qty-input').value = item.qty;
     tr.querySelector('.rate-input').value = item.rate;
@@ -891,25 +604,9 @@ function saveQuotation() {
   if(!custId) { toast('Please select a customer','error'); return; }
   const items = getItemsFromTable('q');
   if(!items.length) { toast('Add at least one item','error'); return; }
-  const totals = getGrandFromTable('q');
-  const data = {
-    no: document.getElementById('q-no').value,
-    date: document.getElementById('q-date').value,
-    validTill: document.getElementById('q-valid').value,
-    customerId: custId,
-    status: document.getElementById('q-status').value,
-    notes: document.getElementById('q-notes').value,
-    items, ...totals
-  };
-  if(editQuotId) {
-    const idx = DB.quotations.findIndex(x=>x.id===editQuotId);
-    DB.quotations[idx] = { ...DB.quotations[idx], ...data };
-    toast('Quotation updated');
-  } else {
-    DB.quotations.push({ id: uid(), ...data });
-    DB.counters.quotation++;
-    toast('Quotation created');
-  }
+  const data = { no:document.getElementById('q-no').value, date:document.getElementById('q-date').value, validTill:document.getElementById('q-valid').value, customerId:custId, status:document.getElementById('q-status').value, notes:document.getElementById('q-notes').value, items, ...getGrandFromTable('q') };
+  if(editQuotId) { const idx=DB.quotations.findIndex(x=>x.id===editQuotId); DB.quotations[idx]={...DB.quotations[idx],...data}; toast('Quotation updated'); }
+  else { DB.quotations.push({id:uid(),...data}); DB.counters.quotation++; toast('Quotation created'); }
   saveDB(); closeModal('modal-quotation'); renderQuotations();
 }
 function deleteQuotation(id) {
@@ -918,8 +615,7 @@ function deleteQuotation(id) {
   saveDB(); renderQuotations(); toast('Quotation deleted');
 }
 function convertToInvoice(qId) {
-  const q = DB.quotations.find(x=>x.id===qId);
-  if(!q) return;
+  const q = DB.quotations.find(x=>x.id===qId); if(!q) return;
   editInvoiceId = null;
   document.getElementById('inv-modal-title').textContent = 'New Invoice (from Quotation)';
   document.getElementById('i-no').value = 'INV-' + String(DB.counters.invoice).padStart(4,'0');
@@ -932,8 +628,7 @@ function convertToInvoice(qId) {
   document.getElementById('i-items-body').innerHTML = '';
   q.items.forEach(item => {
     addItemRow('i-items-body','i');
-    const rows = document.querySelectorAll('#i-items-body tr');
-    const tr = rows[rows.length-1];
+    const tr = [...document.querySelectorAll('#i-items-body tr')].pop();
     if(item.prodId) tr.querySelector('select').value = item.prodId;
     tr.querySelector('input[placeholder="Description"]').value = item.desc||'';
     tr.querySelector('.qty-input').value = item.qty;
@@ -942,38 +637,18 @@ function convertToInvoice(qId) {
     tr.querySelector('.gst-sel').value = item.gst;
     calcRow(tr.querySelector('.qty-input'),'i');
   });
-  closeModal('modal-quotation');
-  openModal('modal-invoice');
+  closeModal('modal-quotation'); openModal('modal-invoice');
 }
 function renderQuotations() {
   const q = document.getElementById('quot-search').value.toLowerCase();
-  const list = [...DB.quotations].reverse().filter(x => {
-    const c = DB.customers.find(cu=>cu.id===x.customerId);
-    return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q);
-  });
+  const list = [...DB.quotations].reverse().filter(x => { const c=DB.customers.find(cu=>cu.id===x.customerId); return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q); });
   const tbody = document.getElementById('quotations-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">📋</div><h3>No Quotations Yet</h3><p>Create your first quotation</p></div></td></tr>`; return; }
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83d\udccb</div><h3>No Quotations Yet</h3><p>Create your first quotation</p></div></td></tr>`; return; }
   tbody.innerHTML = list.map(q => {
-    const c = DB.customers.find(x=>x.id===q.customerId);
-    const badge = q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray';
-    return `<tr>
-      <td><span class="highlight-blue">${q.no}</span></td>
-      <td>${fmtDate(q.date)}</td>
-      <td><strong>${c?c.name:'—'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td>
-      <td>${fmtDate(q.validTill)}</td>
-      <td><strong>${fmt(q.grand)}</strong></td>
-      <td><span class="badge badge-${badge}">${q.status}</span></td>
-      <td style="white-space:nowrap">
-        <button class="btn btn-sm btn-outline" onclick="previewDoc('quotation','${q.id}')">👁️</button>
-        <button class="btn btn-sm btn-ghost" onclick="editQuotation('${q.id}')">✏️</button>
-        <button class="btn btn-sm btn-success" onclick="convertToInvoice('${q.id}')" title="Convert to Invoice">🔄</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteQuotation('${q.id}')">🗑️</button>
-      </td>
-    </tr>`;
+    const c=DB.customers.find(x=>x.id===q.customerId), badge=q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray';
+    return `<tr><td><span class="highlight-blue">${q.no}</span></td><td>${fmtDate(q.date)}</td><td><strong>${c?c.name:'\u2014'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td>${fmtDate(q.validTill)}</td><td><strong>${fmt(q.grand)}</strong></td><td><span class="badge badge-${badge}">${q.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('quotation','${q.id}')">\ud83d\udc41\ufe0f</button> <button class="btn btn-sm btn-ghost" onclick="editQuotation('${q.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-success" onclick="convertToInvoice('${q.id}')" title="Convert to Invoice">\ud83d\udd04</button> <button class="btn btn-sm btn-danger" onclick="deleteQuotation('${q.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`;
   }).join('');
 }
-
-// ======================== INVOICES ========================
 let editInvoiceId = null;
 function openInvoiceModal() {
   editInvoiceId = null;
@@ -984,14 +659,10 @@ function openInvoiceModal() {
   document.getElementById('i-status').value = 'Unpaid';
   document.getElementById('i-notes').value = DB.company.terms;
   document.getElementById('i-items-body').innerHTML = '';
-  calcTotals('i');
-  populateCustomerDropdowns();
-  openModal('modal-invoice');
-  addItemRow('i-items-body','i');
+  calcTotals('i'); populateCustomerDropdowns(); openModal('modal-invoice'); addItemRow('i-items-body','i');
 }
 function editInvoice(id) {
-  const inv = DB.invoices.find(x=>x.id===id);
-  if(!inv) return;
+  const inv = DB.invoices.find(x=>x.id===id); if(!inv) return;
   editInvoiceId = id;
   document.getElementById('inv-modal-title').textContent = 'Edit Invoice';
   document.getElementById('i-no').value = inv.no;
@@ -1004,8 +675,7 @@ function editInvoice(id) {
   document.getElementById('i-items-body').innerHTML = '';
   inv.items.forEach(item => {
     addItemRow('i-items-body','i');
-    const rows = document.querySelectorAll('#i-items-body tr');
-    const tr = rows[rows.length-1];
+    const tr = [...document.querySelectorAll('#i-items-body tr')].pop();
     if(item.prodId) tr.querySelector('select').value = item.prodId;
     tr.querySelector('input[placeholder="Description"]').value = item.desc||'';
     tr.querySelector('.qty-input').value = item.qty;
@@ -1021,25 +691,9 @@ function saveInvoice() {
   if(!custId) { toast('Please select a customer','error'); return; }
   const items = getItemsFromTable('i');
   if(!items.length) { toast('Add at least one item','error'); return; }
-  const totals = getGrandFromTable('i');
-  const data = {
-    no: document.getElementById('i-no').value,
-    date: document.getElementById('i-date').value,
-    dueDate: document.getElementById('i-due').value,
-    customerId: custId,
-    status: document.getElementById('i-status').value,
-    notes: document.getElementById('i-notes').value,
-    items, ...totals
-  };
-  if(editInvoiceId) {
-    const idx = DB.invoices.findIndex(x=>x.id===editInvoiceId);
-    DB.invoices[idx] = { ...DB.invoices[idx], ...data };
-    toast('Invoice updated');
-  } else {
-    DB.invoices.push({ id: uid(), ...data });
-    DB.counters.invoice++;
-    toast('Invoice created');
-  }
+  const data = { no:document.getElementById('i-no').value, date:document.getElementById('i-date').value, dueDate:document.getElementById('i-due').value, customerId:custId, status:document.getElementById('i-status').value, notes:document.getElementById('i-notes').value, items, ...getGrandFromTable('i') };
+  if(editInvoiceId) { const idx=DB.invoices.findIndex(x=>x.id===editInvoiceId); DB.invoices[idx]={...DB.invoices[idx],...data}; toast('Invoice updated'); }
+  else { DB.invoices.push({id:uid(),...data}); DB.counters.invoice++; toast('Invoice created'); }
   saveDB(); closeModal('modal-invoice'); renderInvoices();
 }
 function deleteInvoice(id) {
@@ -1049,69 +703,26 @@ function deleteInvoice(id) {
 }
 function renderInvoices() {
   const q = document.getElementById('inv-search').value.toLowerCase();
-  const list = [...DB.invoices].reverse().filter(x => {
-    const c = DB.customers.find(cu=>cu.id===x.customerId);
-    return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q);
-  });
+  const list = [...DB.invoices].reverse().filter(x => { const c=DB.customers.find(cu=>cu.id===x.customerId); return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q); });
   const tbody = document.getElementById('invoices-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">🧾</div><h3>No Invoices Yet</h3><p>Create your first invoice</p></div></td></tr>`; return; }
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83e\uddfe</div><h3>No Invoices Yet</h3><p>Create your first invoice</p></div></td></tr>`; return; }
   tbody.innerHTML = list.map(inv => {
-    const c = DB.customers.find(x=>x.id===inv.customerId);
-    const badge = inv.status==='Paid'?'success':inv.status==='Partial'?'warning':'danger';
-    const overdue = inv.status!=='Paid' && new Date(inv.dueDate) < new Date();
-    return `<tr>
-      <td><span class="highlight-blue">${inv.no}</span></td>
-      <td>${fmtDate(inv.date)}</td>
-      <td><strong>${c?c.name:'—'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td>
-      <td style="color:${overdue&&inv.status!=='Paid'?'var(--danger)':'inherit'}">${fmtDate(inv.dueDate)}${overdue&&inv.status!=='Paid'?' ⚠️':''}</td>
-      <td><strong>${fmt(inv.grand)}</strong></td>
-      <td><span class="badge badge-${badge}">${inv.status}</span></td>
-      <td style="white-space:nowrap">
-        <button class="btn btn-sm btn-outline" onclick="previewDoc('invoice','${inv.id}')">👁️</button>
-        <button class="btn btn-sm btn-ghost" onclick="editInvoice('${inv.id}')">✏️</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteInvoice('${inv.id}')">🗑️</button>
-      </td>
-    </tr>`;
+    const c=DB.customers.find(x=>x.id===inv.customerId), badge=inv.status==='Paid'?'success':inv.status==='Partial'?'warning':'danger', overdue=inv.status!=='Paid'&&new Date(inv.dueDate)<new Date();
+    return `<tr><td><span class="highlight-blue">${inv.no}</span></td><td>${fmtDate(inv.date)}</td><td><strong>${c?c.name:'\u2014'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td style="color:${overdue?'var(--danger)':'inherit'}">${fmtDate(inv.dueDate)}${overdue?' \u26a0\ufe0f':''}</td><td><strong>${fmt(inv.grand)}</strong></td><td><span class="badge badge-${badge}">${inv.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('invoice','${inv.id}')">\ud83d\udc41\ufe0f</button> <button class="btn btn-sm btn-ghost" onclick="editInvoice('${inv.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteInvoice('${inv.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`;
   }).join('');
 }
-
-// ======================== PREVIEW & PDF ========================
 function previewDoc(type, id) {
   const doc = type==='invoice' ? DB.invoices.find(x=>x.id===id) : DB.quotations.find(x=>x.id===id);
   if(!doc) return;
-  const c = DB.customers.find(x=>x.id===doc.customerId)||{};
-  const co = DB.company;
-  const isInv = type==='invoice';
-  const docLabel = isInv ? 'TAX INVOICE' : 'QUOTATION';
-  const docColor = isInv ? '#0057FF' : '#059669';
-
-  const itemsHTML = doc.items.map((item,i) => `
-    <tr>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px">${i+1}</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px">
-        <strong>${item.name}</strong>
-        ${item.desc?`<br><span style="color:#6B7280;font-size:11.5px">${item.desc}</span>`:''}
-      </td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.hsn||'—'}</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.qty} ${item.unit}</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right">${fmt(item.rate)}</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.disc}%</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.gst}%</td>
-      <td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right;font-weight:700">${fmt(item.total)}</td>
-    </tr>`).join('');
-
-  const html = `
-  <div id="printable-doc" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff">
-    <!-- HEADER -->
+  const c=DB.customers.find(x=>x.id===doc.customerId)||{}, co=DB.company;
+  const isInv=type==='invoice', docColor=isInv?'#0057FF':'#059669', docLabel=isInv?'TAX INVOICE':'QUOTATION';
+  const itemsHTML = doc.items.map((item,i) => `<tr><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px">${i+1}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px"><strong>${item.name}</strong>${item.desc?`<br><span style="color:#6B7280;font-size:11.5px">${item.desc}</span>`:''}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.hsn||'\u2014'}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.qty} ${item.unit}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right">${fmt(item.rate)}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.disc}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.gst}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right;font-weight:700">${fmt(item.total)}</td></tr>`).join('');
+  const html = `<div id="printable-doc" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff">
     <div style="background:${docColor};color:#fff;padding:28px 32px;display:flex;justify-content:space-between;align-items:flex-start">
       <div>
-        <div style="font-size:28px;margin-bottom:6px">❄️</div>
+        <div style="margin-bottom:8px"><img src="${LOGO_URI}" style="width:60px;height:46px;object-fit:contain;background:#fff;border-radius:6px;padding:3px"></div>
         <div style="font-size:22px;font-weight:800;letter-spacing:-0.5px">${co.name}</div>
-        <div style="font-size:12px;opacity:.85;margin-top:6px;line-height:2">
-          ${co.owner}<br>
-          ${co.address}<br>
-          📞 ${co.phone} | ✉️ ${co.email}
-        </div>
+        <div style="font-size:12px;opacity:.85;margin-top:6px;line-height:2">${co.owner}<br>${co.address}<br>\ud83d\udcde ${co.phone} | \u2709\ufe0f ${co.email}</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:28px;font-weight:800;letter-spacing:2px;opacity:.25">${docLabel}</div>
@@ -1119,13 +730,11 @@ function previewDoc(type, id) {
         <div style="font-size:12px;opacity:.8;margin-top:6px">GSTIN: ${co.gstin}</div>
       </div>
     </div>
-    
-    <!-- META -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 32px;border-bottom:2px solid #F0F4FF">
       <div>
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#6B7280;letter-spacing:1px;margin-bottom:8px">Bill To</div>
-        <div style="font-size:15px;font-weight:800;color:#1A1F36">${c.name||'—'}</div>
-        <div style="font-size:13px;color:#4B5563;margin-top:4px;line-height:1.8">${(c.address||'').replace(/\n/g,'<br>')}${c.phone?'<br>📞 '+c.phone:''}</div>
+        <div style="font-size:15px;font-weight:800;color:#1A1F36">${c.name||'\u2014'}</div>
+        <div style="font-size:13px;color:#4B5563;margin-top:4px;line-height:1.8">${(c.address||'').replace(/\n/g,'<br>')}${c.phone?'<br>\ud83d\udcde '+c.phone:''}</div>
         ${c.gstin?`<div style="font-size:12px;color:#2563EB;margin-top:4px;font-weight:600">GSTIN: ${c.gstin}</div>`:''}
       </div>
       <div style="text-align:right">
@@ -1137,124 +746,53 @@ function previewDoc(type, id) {
         </table>
       </div>
     </div>
-
-    <!-- ITEMS TABLE -->
     <div style="padding:20px 32px">
       <table style="width:100%;border-collapse:collapse;font-size:13px">
-        <thead>
-          <tr style="background:#F0F4FF">
-            <th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">#</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">Description</th>
-            <th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">HSN/SAC</th>
-            <th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">Qty</th>
-            <th style="padding:10px 12px;text-align:right;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">Rate</th>
-            <th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">Disc.</th>
-            <th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">GST</th>
-            <th style="padding:10px 12px;text-align:right;font-size:11px;text-transform:uppercase;color:#6B7280;letter-spacing:.5px;border-bottom:2px solid #E5E9F2">Amount</th>
-          </tr>
-        </thead>
+        <thead><tr style="background:#F0F4FF"><th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">#</th><th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">Description</th><th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">HSN/SAC</th><th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">Qty</th><th style="padding:10px 12px;text-align:right;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">Rate</th><th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">Disc.</th><th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">GST</th><th style="padding:10px 12px;text-align:right;font-size:11px;text-transform:uppercase;color:#6B7280;border-bottom:2px solid #E5E9F2">Amount</th></tr></thead>
         <tbody>${itemsHTML}</tbody>
       </table>
     </div>
-
-    <!-- TOTALS & BANK -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 32px 24px">
       <div>
-        ${co.bank?`<div style="background:#F8FAFF;border-radius:10px;padding:14px;font-size:12px">
-          <div style="font-weight:700;margin-bottom:8px;font-size:13px">Bank Details</div>
-          <div style="color:#6B7280;line-height:2">Bank: <strong style="color:#1A1F36">${co.bank}</strong><br>Acc No: <strong style="color:#1A1F36">${co.account}</strong><br>IFSC: <strong style="color:#1A1F36">${co.ifsc}</strong></div>
-        </div>`:''}
-        <div style="margin-top:10px;background:#F0F4FF;border-radius:10px;padding:14px;font-size:12.5px">
-          <div style="font-weight:700;margin-bottom:4px">Amount in Words:</div>
-          <div style="color:#0057FF;font-weight:600;font-style:italic">${numToWords(Math.round(doc.grand))}</div>
-        </div>
+        ${co.bank?`<div style="background:#F8FAFF;border-radius:10px;padding:14px;font-size:12px"><div style="font-weight:700;margin-bottom:8px;font-size:13px">Bank Details</div><div style="color:#6B7280;line-height:2">Bank: <strong style="color:#1A1F36">${co.bank}</strong><br>Acc No: <strong style="color:#1A1F36">${co.account}</strong><br>IFSC: <strong style="color:#1A1F36">${co.ifsc}</strong></div></div>`:''}
+        <div style="margin-top:10px;background:#F0F4FF;border-radius:10px;padding:14px;font-size:12.5px"><div style="font-weight:700;margin-bottom:4px">Amount in Words:</div><div style="color:#0057FF;font-weight:600;font-style:italic">${numToWords(Math.round(doc.grand))}</div></div>
       </div>
-      <div>
-        <div style="background:#F8FAFF;border-radius:10px;padding:16px;min-width:260px">
-          <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>Subtotal</span><span>${fmt(doc.subtotal)}</span></div>
-          <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>Discount</span><span>-${fmt(doc.discount)}</span></div>
-          <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>GST</span><span>${fmt(doc.gstTotal)}</span></div>
-          <div style="display:flex;justify-content:space-between;padding:12px 0 5px;font-size:18px;font-weight:800;color:#1A1F36;border-top:2px solid #E5E9F2;margin-top:6px"><span>Grand Total</span><span style="color:${docColor}">${fmt(doc.grand)}</span></div>
-        </div>
-      </div>
+      <div><div style="background:#F8FAFF;border-radius:10px;padding:16px;min-width:260px">
+        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>Subtotal</span><span>${fmt(doc.subtotal)}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>Discount</span><span>-${fmt(doc.discount)}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#6B7280"><span>GST</span><span>${fmt(doc.gstTotal)}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0 5px;font-size:18px;font-weight:800;color:#1A1F36;border-top:2px solid #E5E9F2;margin-top:6px"><span>Grand Total</span><span style="color:${docColor}">${fmt(doc.grand)}</span></div>
+      </div></div>
     </div>
-
-    <!-- TERMS -->
-    ${doc.notes?`<div style="padding:0 32px 20px;border-top:1px solid #F0F4FF;margin-top:8px">
-      <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;color:#6B7280;letter-spacing:1px;margin-bottom:8px;padding-top:14px">Terms & Conditions</div>
-      <div style="font-size:12px;color:#6B7280;line-height:1.9;white-space:pre-line">${doc.notes}</div>
-    </div>`:''}
-
-    <!-- SIGNATURE -->
+    ${doc.notes?`<div style="padding:0 32px 20px;border-top:1px solid #F0F4FF;margin-top:8px"><div style="font-size:11.5px;font-weight:700;text-transform:uppercase;color:#6B7280;letter-spacing:1px;margin-bottom:8px;padding-top:14px">Terms &amp; Conditions</div><div style="font-size:12px;color:#6B7280;line-height:1.9;white-space:pre-line">${doc.notes}</div></div>`:''}
     <div style="display:flex;justify-content:space-between;padding:16px 32px 28px;border-top:1px solid #F0F4FF">
       <div style="font-size:12px;color:#9CA3AF">This is a computer generated document.</div>
-      <div style="text-align:center;min-width:160px">
-        <div style="border-top:1.5px solid #1A1F36;padding-top:8px;font-size:12px;color:#6B7280">Authorised Signatory<br><strong style="color:#1A1F36">${co.name}</strong></div>
-      </div>
+      <div style="text-align:center;min-width:160px"><div style="border-top:1.5px solid #1A1F36;padding-top:8px;font-size:12px;color:#6B7280">Authorised Signatory<br><strong style="color:#1A1F36">${co.name}</strong></div></div>
     </div>
   </div>`;
-
   document.getElementById('preview-content').innerHTML = html;
   document.getElementById('preview-title').textContent = `${isInv?'Invoice':'Quotation'}: ${doc.no}`;
   openModal('modal-preview');
 }
-
 function printDocument() {
   const content = document.getElementById('printable-doc').innerHTML;
   const win = window.open('','_blank','width=900,height=700');
-  win.document.write(`<!DOCTYPE html><html><head><title>Air Cool Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    @page{margin:0;size:A4}
-    @media print{body{padding:0}}
-  </style></head><body>${content}
-  <script>window.onload=function(){window.print();window.onafterprint=function(){window.close()}}<\/script>
-  </body></html>`);
+  win.document.write(`<!DOCTYPE html><html><head><title>Air Cool Document</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{margin:0;size:A4}@media print{body{padding:0}}</style></head><body>${content}<script>window.onload=function(){window.print();window.onafterprint=function(){window.close()}}<\/script></body></html>`);
   win.document.close();
 }
-
-// ======================== SETTINGS ========================
 function syncSettingsForm() {
   const co = DB.company;
   if(document.getElementById('s-name')) {
-    document.getElementById('s-name').value = co.name||'';
-    document.getElementById('s-owner').value = co.owner||'';
-    document.getElementById('s-address').value = co.address||'';
-    document.getElementById('s-phone').value = co.phone||'';
-    document.getElementById('s-email').value = co.email||'';
-    document.getElementById('s-gstin').value = co.gstin||'';
-    document.getElementById('s-state').value = co.state||'';
-    document.getElementById('s-bank').value = co.bank||'';
-    document.getElementById('s-account').value = co.account||'';
-    document.getElementById('s-ifsc').value = co.ifsc||'';
-    document.getElementById('s-terms').value = co.terms||'';
+    ['name','owner','address','phone','email','gstin','state','bank','account','ifsc','terms'].forEach(k => { const el=document.getElementById('s-'+k); if(el) el.value=co[k]||''; });
   }
 }
 function saveSettings() {
-  DB.company = {
-    name: document.getElementById('s-name').value.trim(),
-    owner: document.getElementById('s-owner').value.trim(),
-    address: document.getElementById('s-address').value.trim(),
-    phone: document.getElementById('s-phone').value.trim(),
-    email: document.getElementById('s-email').value.trim(),
-    gstin: document.getElementById('s-gstin').value.trim(),
-    state: document.getElementById('s-state').value.trim(),
-    bank: document.getElementById('s-bank').value.trim(),
-    account: document.getElementById('s-account').value.trim(),
-    ifsc: document.getElementById('s-ifsc').value.trim(),
-    terms: document.getElementById('s-terms').value.trim()
-  };
+  DB.company = { name:document.getElementById('s-name').value.trim(), owner:document.getElementById('s-owner').value.trim(), address:document.getElementById('s-address').value.trim(), phone:document.getElementById('s-phone').value.trim(), email:document.getElementById('s-email').value.trim(), gstin:document.getElementById('s-gstin').value.trim(), state:document.getElementById('s-state').value.trim(), bank:document.getElementById('s-bank').value.trim(), account:document.getElementById('s-account').value.trim(), ifsc:document.getElementById('s-ifsc').value.trim(), terms:document.getElementById('s-terms').value.trim() };
   saveDB();
   toast('Company settings saved!');
   document.querySelector('.company-badge').innerHTML = `<strong>${DB.company.name}</strong>${DB.company.owner}<br>GSTIN: ${DB.company.gstin}`;
 }
-
-// ======================== BUTTON OVERRIDES ========================
 document.querySelector('[onclick="openModal(\'modal-customer\')"]').setAttribute('onclick','openModal_customer_new()');
-
-// ======================== INIT ========================
 loadDB();
 updateDashboard();
 </script>
