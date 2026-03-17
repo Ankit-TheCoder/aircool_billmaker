@@ -14,6 +14,8 @@
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
+  --amc: #7C3AED;
+  --amc-light: #EDE9FE;
   --dark: #0A0F1E;
   --sidebar-bg: #050B1A;
   --card: #FFFFFF;
@@ -36,6 +38,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:rgba(255,255,255,0.55);cursor:pointer;transition:.2s;font-size:13.5px;font-weight:500;margin-bottom:2px}
 .nav-item:hover,.nav-item.active{background:rgba(0,87,255,0.2);color:#fff}
 .nav-item.active{background:var(--primary);color:#fff}
+.nav-item.amc-nav.active{background:var(--amc);}
 .nav-item .icon{font-size:16px;width:20px;text-align:center}
 .sidebar-footer{padding:16px;border-top:1px solid rgba(255,255,255,0.07)}
 .company-badge{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px;font-size:11px;color:rgba(255,255,255,0.5)}
@@ -48,6 +51,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:9px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;border:none;transition:.2s;text-decoration:none}
 .btn-primary{background:var(--primary);color:#fff}
 .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,87,255,0.3)}
+.btn-amc{background:var(--amc);color:#fff}
+.btn-amc:hover{background:#6D28D9;transform:translateY(-1px);box-shadow:0 4px 12px rgba(124,58,237,0.3)}
 .btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
 .btn-outline:hover{background:var(--primary-light)}
 .btn-danger{background:#FEE2E2;color:var(--danger);border:none}
@@ -60,7 +65,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-ghost{background:transparent;color:var(--text-muted);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
 .card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow)}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:24px}
 .stat-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:20px;position:relative;overflow:hidden;transition:.2s}
 .stat-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,87,255,0.1)}
 .stat-card .stat-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
@@ -79,6 +84,7 @@ tr:hover td{background:#FAFBFF}
 .badge-danger{background:#FEE2E2;color:#DC2626}
 .badge-info{background:#DBEAFE;color:#2563EB}
 .badge-gray{background:#F3F4F6;color:#6B7280}
+.badge-amc{background:#EDE9FE;color:#7C3AED}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .form-group{display:flex;flex-direction:column;gap:6px}
@@ -90,6 +96,7 @@ tr:hover td{background:#FAFBFF}
 .modal-overlay.open{display:flex}
 .modal{background:#fff;border-radius:18px;width:100%;max-width:760px;box-shadow:0 24px 80px rgba(0,0,0,0.2);animation:modalIn .25s ease}
 .modal-lg{max-width:960px}
+.modal-xl{max-width:1100px}
 .modal-header{padding:22px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .modal-header h2{font-size:18px;font-weight:700}
 .modal-body{padding:28px}
@@ -135,14 +142,22 @@ tr:hover td{background:#FAFBFF}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .section-title{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
 .highlight-blue{color:var(--primary);font-weight:700;font-family:'DM Mono',monospace}
+.highlight-amc{color:var(--amc);font-weight:700;font-family:'DM Mono',monospace}
+/* AMC specific */
+.amc-unit-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 40px;gap:8px;align-items:end;margin-bottom:10px;padding:10px;background:#F8FAFF;border-radius:8px;border:1px solid var(--border)}
+.amc-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.amc-check-item{display:flex;align-items:center;gap:8px;font-size:13px;padding:7px 10px;background:#F8FAFF;border-radius:7px;cursor:pointer;border:1.5px solid var(--border);transition:.15s}
+.amc-check-item:has(input:checked){background:var(--amc-light);border-color:var(--amc);color:var(--amc);font-weight:600}
+.amc-check-item input[type=checkbox]{accent-color:var(--amc);width:15px;height:15px}
+.section-divider{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amc);margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--amc-light)}
 </style>
 </head>
 <body>
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-icon" style="background:transparent;padding:0;overflow:visible"><img src="data:image/jpeg;base64,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" style="width:42px;height:32px;object-fit:contain"></div>
+    <div class="logo-icon" style="background:transparent;padding:0;overflow:visible"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACxAOMDASIAAhEBAxEB/8QAHAABAAMAAwEBAAAAAAAAAAAAAAUGBwECAwQI/8QAPRAAAgICAQIDBAYIBgEFAAAAAQIAAwQRBRIhBhMxByJBURQVIzJhlBY0VXKTsdHhQlJWcYHUJDZTc5Hw/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAIDAQUGBAf/xAA0EQACAQMCAwQIBQUAAAAAAAAAAQIDBBEFMRIhQQYTUXEUFTJTYbHB0TNCgZGhFiJD4fH/2gAMAwEAAhEDEQA/APxlERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBE50ZxAEREAREQBERAEREAREQBERAJfwlxA5vmq8N7RXUFay1utVbpUei9RGyew0NnvvR1Na+q/B/+guB/M8h/wBmVf2Zcdj08LZyLoWy8i0qjMvZKl/ykP36mLbBUEeWumIZgLZKJyecI5DWdTqxuO7pSwl4eJ5/VfhD/QXA/meQ/wCzH1X4Q/0FwP5nkP8Asz0iQ4man1ld+8f7lG9pnBcfRj1cvxPHYnGUB1otxqLnK9RDFXAtsew70QdbUaXeuoboc27PwsTkMS3DzU6qbVKkhOtqyR2dR1LtlOmALAEjR7EiYnajVWNW40yEqR8iJdTllHW6Leu5oYm8yR1iIlhuBERAERJHgeHzeay2x8NU2qF2d26VUAE6J+Z1oD4mCM5xgnKTwiOlj43wVz2ZjV5T49eHRaGNbZL9LPpVYEINv0t1AK5XpJ2AfdbV+4Hw/wAXw1DV0U1Zd3W//mXUasZGHSF6SzKgA36d9sdk6XUq7M7s7szOxLMzHZJPqSfiZVKp4HN3naGMXw0Fn4sp+H4B42qzeVm5GSoNg0iivqGtIfjrR0SP" style="width:42px;height:32px;object-fit:contain"></div>
     <h2>Air Cool</h2>
-    <p>Billing Software v1.0</p>
+    <p>Billing Software v2.0</p>
   </div>
   <nav class="sidebar-nav">
     <div class="nav-section">Main</div>
@@ -153,16 +168,18 @@ tr:hover td{background:#FAFBFF}
     <div class="nav-section">Documents</div>
     <div class="nav-item" onclick="showPage('quotations')"><span class="icon">📋</span> Quotations</div>
     <div class="nav-item" onclick="showPage('invoices')"><span class="icon">🧾</span> Invoices</div>
+    <div class="nav-item amc-nav" onclick="showPage('amc')"><span class="icon">📄</span> AMC Contracts</div>
     <div class="nav-section">Settings</div>
     <div class="nav-item" onclick="showPage('settings')"><span class="icon">⚙️</span> Company Settings</div>
   </nav>
   <div class="sidebar-footer">
     <div class="company-badge">
-      <strong>Air Cool Services</strong>
-      Shivmurat Yadav<br>GSTIN: 09AJUPY4616R1ZT
+      <strong id="sb-name">Air Cool Services</strong>
+      <span id="sb-owner">Shivmurat Yadav</span><br>GSTIN: <span id="sb-gstin">09AJUPY4616R1ZT</span>
     </div>
   </div>
 </aside>
+
 <div class="main">
   <div class="topbar">
     <h1 id="page-title">Dashboard</h1>
@@ -171,25 +188,32 @@ tr:hover td{background:#FAFBFF}
     </div>
   </div>
   <div class="page-content">
+
+    <!-- DASHBOARD -->
     <div id="page-dashboard" class="section active">
       <div class="stat-grid">
         <div class="stat-card"><div class="stat-icon" style="background:#EEF4FF">👥</div><div class="stat-val" id="dash-customers">0</div><div class="stat-label">Total Customers</div></div>
         <div class="stat-card"><div class="stat-icon" style="background:#FEF3C7">📋</div><div class="stat-val" id="dash-quotations">0</div><div class="stat-label">Quotations</div></div>
         <div class="stat-card"><div class="stat-icon" style="background:#D1FAE5">🧾</div><div class="stat-val" id="dash-invoices">0</div><div class="stat-label">Invoices</div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#EDE9FE">📄</div><div class="stat-val" id="dash-amc">0</div><div class="stat-label">AMC Contracts</div></div>
         <div class="stat-card"><div class="stat-icon" style="background:#FCE7F3">💰</div><div class="stat-val" id="dash-revenue">₹0</div><div class="stat-label">Total Revenue</div></div>
       </div>
       <div class="grid-2">
         <div class="card"><div class="section-title">Recent Invoices</div><div class="recent-list" id="dash-recent-invoices"><div class="empty-state"><div class="empty-icon">🧾</div><p>No invoices yet</p></div></div></div>
-        <div class="card"><div class="section-title">Recent Quotations</div><div class="recent-list" id="dash-recent-quotations"><div class="empty-state"><div class="empty-icon">📋</div><p>No quotations yet</p></div></div></div>
+        <div class="card"><div class="section-title">Recent AMC Contracts</div><div class="recent-list" id="dash-recent-amc"><div class="empty-state"><div class="empty-icon">📄</div><p>No AMC contracts yet</p></div></div></div>
       </div>
     </div>
+
+    <!-- CUSTOMERS -->
     <div id="page-customers" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
         <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="cust-search" placeholder="Search customers..." oninput="renderCustomers()"></div>
-        <button class="btn btn-primary" onclick="openModal('modal-customer')">➕ Add Customer</button>
+        <button class="btn btn-primary" onclick="openModal_customer_new()">➕ Add Customer</button>
       </div>
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>GSTIN</th><th>Actions</th></tr></thead><tbody id="customers-table-body"></tbody></table></div>
     </div>
+
+    <!-- PRODUCTS -->
     <div id="page-products" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
         <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="prod-search" placeholder="Search products/services..." oninput="renderProducts()"></div>
@@ -197,6 +221,8 @@ tr:hover td{background:#FAFBFF}
       </div>
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Type</th><th>HSN/SAC</th><th>Unit</th><th>Rate (₹)</th><th>GST %</th><th>Actions</th></tr></thead><tbody id="products-table-body"></tbody></table></div>
     </div>
+
+    <!-- QUOTATIONS -->
     <div id="page-quotations" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
         <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="quot-search" placeholder="Search quotations..." oninput="renderQuotations()"></div>
@@ -204,6 +230,8 @@ tr:hover td{background:#FAFBFF}
       </div>
       <div class="table-wrap"><table><thead><tr><th>Quot. No.</th><th>Date</th><th>Customer</th><th>Valid Till</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="quotations-table-body"></tbody></table></div>
     </div>
+
+    <!-- INVOICES -->
     <div id="page-invoices" class="section">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
         <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="inv-search" placeholder="Search invoices..." oninput="renderInvoices()"></div>
@@ -211,6 +239,22 @@ tr:hover td{background:#FAFBFF}
       </div>
       <div class="table-wrap"><table><thead><tr><th>Inv. No.</th><th>Date</th><th>Customer</th><th>Due Date</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="invoices-table-body"></tbody></table></div>
     </div>
+
+    <!-- AMC CONTRACTS -->
+    <div id="page-amc" class="section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="amc-search" placeholder="Search AMC contracts..." oninput="renderAMC()"></div>
+        <button class="btn btn-amc" onclick="openAMCModal()">➕ New AMC Contract</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Contract No.</th><th>Customer</th><th>AC Units</th><th>Start Date</th><th>End Date</th><th>Amount</th><th>Plan</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="amc-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
     <div id="page-settings" class="section">
       <div class="card" style="max-width:640px">
         <h3 style="font-size:16px;font-weight:700;margin-bottom:20px">Company Information</h3>
@@ -225,11 +269,26 @@ tr:hover td{background:#FAFBFF}
           <div class="form-group"><label>Bank Name</label><input id="s-bank" placeholder="e.g. SBI, HDFC..."></div>
           <div class="form-group"><label>Account Number</label><input id="s-account" placeholder="Account number"></div>
           <div class="form-group"><label>IFSC Code</label><input id="s-ifsc" placeholder="IFSC Code"></div>
-          <div class="form-group"><label>Terms &amp; Conditions</label><textarea id="s-terms">1. Payment due within 30 days.&#10;2. Warranty: 30 days on all services.&#10;3. Service charges are non-refundable.</textarea></div>
+          <div class="form-group" style="grid-column:1/-1"><label>Default Terms &amp; Conditions</label><textarea id="s-terms">1. Payment due within 30 days.&#10;2. Warranty: 30 days on all services.&#10;3. Service charges are non-refundable.</textarea></div>
+          <div class="form-group" style="grid-column:1/-1"><label>Default AMC Terms &amp; Conditions</label><textarea id="s-amc-terms" rows="8">1. This Annual Maintenance Contract (AMC) is valid for the period mentioned above from the date of signing.
+2. The AMC covers preventive maintenance visits as per the agreed schedule (Quarterly/Half-Yearly/As per plan).
+3. Each preventive maintenance visit includes: AC cleaning, filter cleaning, gas pressure check, electrical connections check, coil cleaning, and general inspection.
+4. Emergency breakdown calls are included (as per plan) during working hours: Mon–Sat, 9:00 AM to 6:00 PM.
+5. Gas refilling/recharging, spare parts replacement, and major repairs are NOT included in the AMC and will be charged separately.
+6. Compressor, PCB board, fan motor, and capacitor replacements are chargeable at actuals.
+7. The customer must ensure proper access to the AC units at the time of scheduled visits.
+8. If the customer cancels a scheduled visit without 24-hour prior notice, the visit will be considered utilized.
+9. AMC is non-transferable and applicable only for the AC units mentioned in this contract.
+10. Air Cool Services reserves the right to terminate this contract in case of non-payment.
+11. Payment must be made in full in advance or as per the payment schedule agreed at the time of signing.
+12. Any damage caused due to misuse, power fluctuation, or external factors is not covered under AMC.
+13. This contract is governed by the laws of India, and any disputes shall be settled in Noida jurisdiction.
+14. Air Cool Services is not liable for any consequential or indirect loss arising from equipment failure.</textarea></div>
         </div>
         <button class="btn btn-primary" style="margin-top:20px" onclick="saveSettings()">💾 Save Settings</button>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -311,7 +370,7 @@ tr:hover td{background:#FAFBFF}
       <div style="font-size:13px;font-weight:700;margin-bottom:8px;color:var(--text)">Items</div>
       <table class="items-table" id="i-items-table"><thead><tr><th style="width:30%">Product/Service</th><th style="width:22%">Description</th><th style="width:7%">Qty</th><th style="width:10%">Rate</th><th style="width:8%">Disc%</th><th style="width:8%">GST%</th><th style="width:10%">Amount</th><th style="width:5%"></th></tr></thead><tbody id="i-items-body"></tbody></table>
       <button class="add-row-btn" onclick="addItemRow('i-items-body','i')">+ Add Item</button>
-      <div class="totals-box" id="i-totals">
+      <div class="totals-box">
         <div class="total-row"><span>Subtotal</span><span id="i-subtotal">₹0.00</span></div>
         <div class="total-row"><span>Discount</span><span id="i-discount">-₹0.00</span></div>
         <div class="total-row"><span>GST</span><span id="i-gst-total">₹0.00</span></div>
@@ -320,6 +379,117 @@ tr:hover td{background:#FAFBFF}
       <div class="form-group" style="margin-top:14px"><label>Notes / Terms</label><textarea id="i-notes" placeholder="Additional notes or terms..."></textarea></div>
     </div>
     <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('modal-invoice')">Cancel</button><button class="btn btn-primary" onclick="saveInvoice()">💾 Save Invoice</button></div>
+  </div>
+</div>
+
+<!-- AMC Contract Modal -->
+<div class="modal-overlay" id="modal-amc">
+  <div class="modal modal-xl">
+    <div class="modal-header" style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:18px 18px 0 0">
+      <h2 id="amc-modal-title" style="color:#fff">📄 New AMC Contract</h2>
+      <button class="close-btn" onclick="closeModal('modal-amc')" style="color:#fff">✕</button>
+    </div>
+    <div class="modal-body" style="max-height:80vh;overflow-y:auto">
+
+      <div class="section-divider">📋 Contract Details</div>
+      <div class="form-grid-3" style="margin-bottom:16px">
+        <div class="form-group"><label>Contract No. *</label><input id="amc-no" readonly style="background:#F8FAFF;font-family:'DM Mono',monospace;font-weight:700;color:var(--amc)"></div>
+        <div class="form-group"><label>Contract Date *</label><input type="date" id="amc-date"></div>
+        <div class="form-group"><label>Contract Type *</label>
+          <select id="amc-plan">
+            <option value="Basic">Basic (1 Service/Year)</option>
+            <option value="Standard" selected>Standard (2 Services/Year)</option>
+            <option value="Premium">Premium (4 Services/Year)</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+        <div class="form-group" style="grid-column:1/3"><label>Customer *</label><select id="amc-customer"><option value="">-- Select Customer --</option></select></div>
+        <div class="form-group"><label>Contract Status</label>
+          <select id="amc-status">
+            <option value="Active">Active</option>
+            <option value="Pending">Pending</option>
+            <option value="Expired">Expired</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Start Date *</label><input type="date" id="amc-start" oninput="calcAMCEnd()"></div>
+        <div class="form-group"><label>End Date *</label><input type="date" id="amc-end" readonly style="background:#F8FAFF"></div>
+        <div class="form-group"><label>Duration</label>
+          <select id="amc-duration" onchange="calcAMCEnd()">
+            <option value="12">1 Year (12 Months)</option>
+            <option value="24">2 Years (24 Months)</option>
+            <option value="6">6 Months</option>
+            <option value="3">3 Months</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Service Visits / Year</label><input type="number" id="amc-visits" value="2" min="1" max="12"></div>
+        <div class="form-group"><label>Contract Amount (₹) *</label><input type="number" id="amc-amount" placeholder="e.g. 3600" oninput="calcAMCGST()"></div>
+        <div class="form-group"><label>GST %</label>
+          <select id="amc-gst" onchange="calcAMCGST()">
+            <option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Total Amount (incl. GST)</label><input id="amc-total" readonly style="background:#EDE9FE;font-weight:800;font-size:15px;color:var(--amc)"></div>
+        <div class="form-group"><label>Payment Mode</label>
+          <select id="amc-paymode">
+            <option value="Cash">Cash</option>
+            <option value="Online/UPI">Online / UPI</option>
+            <option value="Cheque">Cheque</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Payment Status</label>
+          <select id="amc-paystatus">
+            <option value="Paid">Paid</option>
+            <option value="Unpaid">Unpaid</option>
+            <option value="Partial">Partial</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section-divider">❄️ AC Unit Details</div>
+      <div id="amc-units-container"></div>
+      <button class="add-row-btn" onclick="addAMCUnit()" style="margin-bottom:16px">+ Add AC Unit</button>
+
+      <div class="section-divider">✅ Services Included in AMC</div>
+      <div class="amc-checklist" id="amc-inclusions-grid">
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="AC Filter Cleaning" checked> 🌀 AC Filter Cleaning</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Coil Cleaning (Indoor)" checked> 🧹 Coil Cleaning (Indoor)</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Coil Cleaning (Outdoor)" checked> 🔧 Coil Cleaning (Outdoor)</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Gas Pressure Check" checked> 💨 Gas Pressure Check</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Electrical Connections Check" checked> ⚡ Electrical Connections Check</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Water Drainage Check" checked> 💧 Water Drainage Check</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Thermostat & Remote Check" checked> 🌡️ Thermostat & Remote Check</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Performance Testing" checked> 📊 Performance Testing</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Emergency Breakdown Calls" checked> 🚨 Emergency Breakdown Calls</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Lubrication of Moving Parts"> 🔩 Lubrication of Moving Parts</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Capacitor Check"> ⚙️ Capacitor Check</label>
+        <label class="amc-check-item"><input type="checkbox" name="inc" value="Free Labour Charges"> 👷 Free Labour Charges</label>
+      </div>
+
+      <div class="section-divider">❌ Exclusions (Not Covered)</div>
+      <div class="amc-checklist" id="amc-exclusions-grid">
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Gas Refilling / Recharging" checked> 💨 Gas Refilling / Recharging</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Spare Parts / Components" checked> 🔧 Spare Parts / Components</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Compressor Replacement" checked> ⚙️ Compressor Replacement</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="PCB Board Repair / Replacement" checked> 🖥️ PCB Board Repair/Replacement</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Fan Motor Replacement" checked> 🔁 Fan Motor Replacement</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Physical/Accidental Damage" checked> 💥 Physical / Accidental Damage</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Power Fluctuation Damage" checked> ⚡ Power Fluctuation Damage</label>
+        <label class="amc-check-item"><input type="checkbox" name="exc" value="Copper Pipe Replacement"> 🔴 Copper Pipe Replacement</label>
+      </div>
+
+      <div class="section-divider">📝 Terms & Conditions</div>
+      <div class="form-group">
+        <label>AMC Terms & Conditions (Editable)</label>
+        <textarea id="amc-terms" rows="12" style="font-size:12.5px;line-height:1.8"></textarea>
+      </div>
+      <div class="form-group" style="margin-top:12px"><label>Special Notes / Remarks</label><textarea id="amc-notes" placeholder="Any special remarks for this customer..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-amc')">Cancel</button>
+      <button class="btn btn-amc" onclick="saveAMC()">💾 Save AMC Contract</button>
+    </div>
   </div>
 </div>
 
@@ -340,29 +510,42 @@ tr:hover td{background:#FAFBFF}
 <div class="toast" id="toast"></div>
 
 <script>
+const LOGO_URI = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACxAOMDASIAAhEBAxEB/8QAHAABAAMAAwEBAAAAAAAAAAAAAAUGBwECAwQI/8QAPRAAAgICAQIDBAYIBgEFAAAAAQIAAwQRBRIhBhMxByJBURQVIzJhlBY0VXKTsdHhQlJWcYHUJDZTc5Hw/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAIDAQUGBAf/xAA0EQACAQMCAwQIBQUAAAAAAAAAAQIDBBEFMRIhQQYTUXEUFTJTYbHB0TNCgZGhFiJD4fH/2gAMAwEAAhEDEQA/APxlERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBE50ZxAEREAREQBERAEREAREQBERAJfwlxA5vmq8N7RXUFay1utVbpUei9RGyew0NnvvR1Na+q/B/+guB/M8h/wBmVf2Zcdj08LZyLoWy8i0qjMvZKl/ykP36mLbBUEeWumIZgLZKJyecI5DWdTqxuO7pSwl4eJ5/VfhD/QXA/meQ/wCzH1X4Q/0FwP5nkP8Asz0iQ4man1ld+8f7lG9pnBcfRj1cvxPHYnGUB1otxqLnK9RDFXAtsew70QdbUaXeuoboc27PwsTkMS3DzU6qbVKkhOtqyR2dR1LtlOmALAEjR7EiYnajVWNW40yEqR8iJdTllHW6Leu5oYm8yR1iIlhuBERAERJHgeHzeay2x8NU2qF2d26VUAE6J+Z1oD4mCM5xgnKTwiOlj43wVz2ZjV5T49eHRaGNbZL9LPpVYEINv0t1AK5XpJ2AfdbV+4Hw/wAXw1DV0U1Zd3W//mXUasZGHSF6SzKgA36d9sdk6XUq7M7s7szOxLMzHZJPqSfiZVKp4HN3naGMXw0Fn4sp+H4B42qzeVm5GSoNg0iivqGtIfjrR0SP';
+
 let DB = {
   company: {
-    name: 'Air Cool',
-    owner: 'Shivmurat Yadav',
+    name: 'Air Cool', owner: 'Shivmurat Yadav',
     address: 'Shop no.7, Main Dadri Road, Behind H.P PETROL PUMP, SEC 41, NOIDA',
-    phone: '+91 9810863918',
-    email: 'aircoolservices4u@gmail.com',
-    gstin: '09AJUPY4616R1ZT',
-    state: 'Uttar Pradesh',
+    phone: '+91 9810863918', email: 'aircoolservices4u@gmail.com',
+    gstin: '09AJUPY4616R1ZT', state: 'Uttar Pradesh',
     bank: '', account: '', ifsc: '',
-    terms: '1. Payment due within 30 days.\n2. Warranty: 30 days on all services.\n3. Service charges are non-refundable.'
+    terms: '1. Payment due within 30 days.\n2. Warranty: 30 days on all services.\n3. Service charges are non-refundable.',
+    amcTerms: `1. This Annual Maintenance Contract (AMC) is valid for the period mentioned above from the date of signing.
+2. The AMC covers preventive maintenance visits as per the agreed schedule (Quarterly/Half-Yearly/As per plan).
+3. Each preventive maintenance visit includes: AC cleaning, filter cleaning, gas pressure check, electrical connections check, coil cleaning, and general inspection.
+4. Emergency breakdown calls are included (as per plan) during working hours: Mon–Sat, 9:00 AM to 6:00 PM.
+5. Gas refilling/recharging, spare parts replacement, and major repairs are NOT included in the AMC and will be charged separately.
+6. Compressor, PCB board, fan motor, and capacitor replacements are chargeable at actuals.
+7. The customer must ensure proper access to the AC units at the time of scheduled visits.
+8. If the customer cancels a scheduled visit without 24-hour prior notice, the visit will be considered utilized.
+9. AMC is non-transferable and applicable only for the AC units mentioned in this contract.
+10. Air Cool Services reserves the right to terminate this contract in case of non-payment.
+11. Payment must be made in full in advance or as per the payment schedule agreed at the time of signing.
+12. Any damage caused due to misuse, power fluctuation, or external factors is not covered under AMC.
+13. This contract is governed by the laws of India, and any disputes shall be settled in Noida jurisdiction.
+14. Air Cool Services is not liable for any consequential or indirect loss arising from equipment failure.`
   },
-  customers: [], products: [], quotations: [], invoices: [],
-  counters: { quotation: 1, invoice: 1 }
+  customers: [], products: [], quotations: [], invoices: [], amc: [],
+  counters: { quotation: 1, invoice: 1, amc: 1 }
 };
-const LOGO_URI = 'data:image/jpeg;base64,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';
+
 function loadDB() {
-  const saved = localStorage.getItem('aircool_db');
-  if (saved) { try { DB = JSON.parse(saved); } catch(e){} }
+  const saved = localStorage.getItem('aircool_db_v2');
+  if (saved) { try { DB = JSON.parse(saved); if(!DB.amc) DB.amc=[]; if(!DB.counters.amc) DB.counters.amc=1; } catch(e){} }
   else { seedDefaultData(); }
   syncSettingsForm();
 }
-function saveDB() { localStorage.setItem('aircool_db', JSON.stringify(DB)); }
+function saveDB() { localStorage.setItem('aircool_db_v2', JSON.stringify(DB)); }
 function seedDefaultData() {
   DB.products = [
     { id: uid(), name: 'AC Service & Cleaning', type: 'service', unit: 'Job', hsn: '998719', rate: 500, gst: 18, desc: 'Complete AC cleaning and servicing' },
@@ -377,23 +560,27 @@ function seedDefaultData() {
   saveDB();
 }
 function uid() { return Date.now().toString(36) + Math.random().toString(36).substr(2,5); }
-function fmt(n) { return '\u20b9' + parseFloat(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+function fmt(n) { return '₹' + parseFloat(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
 function today() { return new Date().toISOString().split('T')[0]; }
 function addDays(d,n) { let dt=new Date(d); dt.setDate(dt.getDate()+n); return dt.toISOString().split('T')[0]; }
+function addMonths(d,m) { let dt=new Date(d); dt.setMonth(dt.getMonth()+m); return dt.toISOString().split('T')[0]; }
 function fmtDate(d) { if(!d) return '-'; let dt=new Date(d); return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
 function numToWords(n){const a=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'],b=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];n=Math.round(n);if(n===0)return'Zero';function hw(n){let s='';if(n>=1000){s+=hw(Math.floor(n/1000))+' Thousand ';n%=1000}if(n>=100){s+=a[Math.floor(n/100)]+' Hundred ';n%=100}if(n>=20){s+=b[Math.floor(n/10)]+' ';n%=10}if(n>0)s+=a[n]+' ';return s}return hw(n).trim()+' Only';}
+
 function showPage(page) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(n => { if(n.textContent.trim().toLowerCase().includes(page.substring(0,4))) n.classList.add('active'); });
-  const titles = {dashboard:'Dashboard',customers:'Customers',products:'Products & Services',quotations:'Quotations',invoices:'Invoices',settings:'Company Settings'};
+  const navMap = {dashboard:0,customers:1,products:2,quotations:3,invoices:4,amc:5,settings:6};
+  document.querySelectorAll('.nav-item')[navMap[page]]?.classList.add('active');
+  const titles = {dashboard:'Dashboard',customers:'Customers',products:'Products & Services',quotations:'Quotations',invoices:'Invoices',amc:'AMC Contracts',settings:'Company Settings'};
   document.getElementById('page-title').textContent = titles[page] || page;
   if(page==='dashboard') updateDashboard();
   if(page==='customers') renderCustomers();
   if(page==='products') renderProducts();
   if(page==='quotations') renderQuotations();
   if(page==='invoices') renderInvoices();
+  if(page==='amc') renderAMC();
 }
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
@@ -402,36 +589,42 @@ document.querySelectorAll('.modal-overlay').forEach(m => {
 });
 function toast(msg, type='success') {
   const t = document.getElementById('toast');
-  t.textContent = (type==='success'?'\u2705 ':'\u274c ') + msg;
+  t.textContent = (type==='success'?'✅ ':'❌ ') + msg;
   t.className = 'toast show ' + type;
   setTimeout(() => t.classList.remove('show'), 3000);
 }
+
+// ----------- DASHBOARD -----------
 function updateDashboard() {
   document.getElementById('dash-customers').textContent = DB.customers.length;
   document.getElementById('dash-quotations').textContent = DB.quotations.length;
   document.getElementById('dash-invoices').textContent = DB.invoices.length;
+  document.getElementById('dash-amc').textContent = DB.amc.length;
   const rev = DB.invoices.filter(i=>i.status==='Paid').reduce((s,i)=>s+i.grand,0);
   document.getElementById('dash-revenue').textContent = fmt(rev);
   const ri = document.getElementById('dash-recent-invoices');
-  const rq = document.getElementById('dash-recent-quotations');
+  const ra = document.getElementById('dash-recent-amc');
   const inv5 = [...DB.invoices].reverse().slice(0,5);
-  const quo5 = [...DB.quotations].reverse().slice(0,5);
   ri.innerHTML = inv5.length ? inv5.map(i => {
     const c = DB.customers.find(x=>x.id===i.customerId);
-    return `<div class="recent-item"><div><div class="ri-name">${i.no}</div><div class="ri-meta">${c?c.name:'\u2014'} \u00b7 ${fmtDate(i.date)}</div></div><div><span class="badge badge-${i.status==='Paid'?'success':i.status==='Partial'?'warning':'danger'}">${i.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(i.grand)}</div></div></div>`;
-  }).join('') : '<div class="empty-state"><div class="empty-icon">\ud83e\uddfe</div><p>No invoices yet</p></div>';
-  rq.innerHTML = quo5.length ? quo5.map(q => {
-    const c = DB.customers.find(x=>x.id===q.customerId);
-    return `<div class="recent-item"><div><div class="ri-name">${q.no}</div><div class="ri-meta">${c?c.name:'\u2014'} \u00b7 ${fmtDate(q.date)}</div></div><div><span class="badge badge-${q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray'}">${q.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(q.grand)}</div></div></div>`;
-  }).join('') : '<div class="empty-state"><div class="empty-icon">\ud83d\udccb</div><p>No quotations yet</p></div>';
+    return `<div class="recent-item"><div><div class="ri-name">${i.no}</div><div class="ri-meta">${c?c.name:'—'} · ${fmtDate(i.date)}</div></div><div><span class="badge badge-${i.status==='Paid'?'success':i.status==='Partial'?'warning':'danger'}">${i.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(i.grand)}</div></div></div>`;
+  }).join('') : '<div class="empty-state"><div class="empty-icon">🧾</div><p>No invoices yet</p></div>';
+  const amc5 = [...DB.amc].reverse().slice(0,5);
+  ra.innerHTML = amc5.length ? amc5.map(a => {
+    const c = DB.customers.find(x=>x.id===a.customerId);
+    const badge = a.status==='Active'?'success':a.status==='Expired'?'danger':a.status==='Cancelled'?'gray':'warning';
+    return `<div class="recent-item"><div><div class="ri-name" style="color:var(--amc)">${a.no}</div><div class="ri-meta">${c?c.name:'—'} · ${a.units.length} Unit(s)</div></div><div><span class="badge badge-${badge}">${a.status}</span><div style="font-size:13px;font-weight:700;text-align:right;margin-top:4px">${fmt(a.totalAmount)}</div></div></div>`;
+  }).join('') : '<div class="empty-state"><div class="empty-icon">📄</div><p>No AMC contracts yet</p></div>';
 }
+
+// ----------- CUSTOMERS -----------
 let editCustomerId = null;
 function renderCustomers() {
   const q = document.getElementById('cust-search').value.toLowerCase();
   const list = DB.customers.filter(c => (c.name+c.phone+c.email+c.address).toLowerCase().includes(q));
   const tbody = document.getElementById('customers-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83d\udc65</div><h3>No Customers Found</h3><p>Add your first customer to get started</p></div></td></tr>`; return; }
-  tbody.innerHTML = list.map((c,i) => `<tr><td>${i+1}</td><td><strong>${c.name}</strong></td><td><a href="tel:${c.phone}" style="color:var(--primary)">${c.phone}</a></td><td>${c.email||'\u2014'}</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.address}">${c.address||'\u2014'}</td><td><span class="badge badge-info" style="font-family:'DM Mono'">${c.gstin||'\u2014'}</span></td><td><button class="btn btn-sm btn-outline" onclick="editCustomer('${c.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteCustomer('${c.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`).join('');
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">👥</div><h3>No Customers Found</h3><p>Add your first customer to get started</p></div></td></tr>`; return; }
+  tbody.innerHTML = list.map((c,i) => `<tr><td>${i+1}</td><td><strong>${c.name}</strong></td><td><a href="tel:${c.phone}" style="color:var(--primary)">${c.phone}</a></td><td>${c.email||'—'}</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.address||'—'}</td><td><span class="badge badge-info" style="font-family:'DM Mono'">${c.gstin||'—'}</span></td><td><button class="btn btn-sm btn-outline" onclick="editCustomer('${c.id}')">✏️</button> <button class="btn btn-sm btn-danger" onclick="deleteCustomer('${c.id}')">🗑️</button></td></tr>`).join('');
 }
 function openModal_customer_new() {
   editCustomerId = null;
@@ -464,13 +657,15 @@ function deleteCustomer(id) {
   DB.customers = DB.customers.filter(c=>c.id!==id);
   saveDB(); renderCustomers(); toast('Customer deleted');
 }
+
+// ----------- PRODUCTS -----------
 let editProductId = null;
 function renderProducts() {
   const q = document.getElementById('prod-search').value.toLowerCase();
   const list = DB.products.filter(p => (p.name+p.type+p.hsn).toLowerCase().includes(q));
   const tbody = document.getElementById('products-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">\ud83d\udee0\ufe0f</div><h3>No Items Found</h3></div></td></tr>`; return; }
-  tbody.innerHTML = list.map((p,i) => `<tr><td>${i+1}</td><td><strong>${p.name}</strong><div style="font-size:11.5px;color:var(--text-muted)">${p.desc||''}</div></td><td><span class="badge badge-${p.type==='service'?'info':'success'}">${p.type==='service'?'\ud83d\udee0\ufe0f Service':'\ud83d\udce6 Product'}</span></td><td><span class="highlight-blue">${p.hsn||'\u2014'}</span></td><td>${p.unit}</td><td><strong>${fmt(p.rate)}</strong></td><td>${p.gst}%</td><td><button class="btn btn-sm btn-outline" onclick="editProduct('${p.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteProduct('${p.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`).join('');
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🛠️</div><h3>No Items Found</h3></div></td></tr>`; return; }
+  tbody.innerHTML = list.map((p,i) => `<tr><td>${i+1}</td><td><strong>${p.name}</strong><div style="font-size:11.5px;color:var(--text-muted)">${p.desc||''}</div></td><td><span class="badge badge-${p.type==='service'?'info':'success'}">${p.type==='service'?'🛠️ Service':'📦 Product'}</span></td><td><span class="highlight-blue">${p.hsn||'—'}</span></td><td>${p.unit}</td><td><strong>${fmt(p.rate)}</strong></td><td>${p.gst}%</td><td><button class="btn btn-sm btn-outline" onclick="editProduct('${p.id}')">✏️</button> <button class="btn btn-sm btn-danger" onclick="deleteProduct('${p.id}')">🗑️</button></td></tr>`).join('');
 }
 function editProduct(id) {
   const p = DB.products.find(x=>x.id===id); if(!p) return;
@@ -501,13 +696,15 @@ function deleteProduct(id) {
   DB.products = DB.products.filter(p=>p.id!==id);
   saveDB(); renderProducts(); toast('Item deleted');
 }
+
+// ----------- ITEMS TABLE (Quotation/Invoice) -----------
 function addItemRow(tbodyId, prefix) {
   const tbody = document.getElementById(tbodyId);
   const rowId = uid();
   const prodOptions = DB.products.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
   const tr = document.createElement('tr');
   tr.dataset.rowId = rowId;
-  tr.innerHTML = `<td><select onchange="fillRowFromProduct(this,'${prefix}','${rowId}')" class="prod-select-${prefix}"><option value="">-- Select --</option>${prodOptions}</select></td><td><input type="text" placeholder="Description"></td><td><input type="number" value="1" min="1" oninput="calcRow(this,'${prefix}')" class="qty-input"></td><td><input type="number" value="0" min="0" step="0.01" oninput="calcRow(this,'${prefix}')" class="rate-input"></td><td><input type="number" value="0" min="0" max="100" oninput="calcRow(this,'${prefix}')" class="disc-input"></td><td><select onchange="calcRow(this,'${prefix}')" class="gst-sel"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></td><td><input type="number" value="0" readonly style="background:#F8FAFF;font-weight:700" class="amt-input"></td><td><button onclick="this.closest('tr').remove();calcTotals('${prefix}')" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:16px">\ud83d\uddd1\ufe0f</button></td>`;
+  tr.innerHTML = `<td><select onchange="fillRowFromProduct(this,'${prefix}','${rowId}')" class="prod-select-${prefix}"><option value="">-- Select --</option>${prodOptions}</select></td><td><input type="text" placeholder="Description"></td><td><input type="number" value="1" min="1" oninput="calcRow(this,'${prefix}')" class="qty-input"></td><td><input type="number" value="0" min="0" step="0.01" oninput="calcRow(this,'${prefix}')" class="rate-input"></td><td><input type="number" value="0" min="0" max="100" oninput="calcRow(this,'${prefix}')" class="disc-input"></td><td><select onchange="calcRow(this,'${prefix}')" class="gst-sel"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></td><td><input type="number" value="0" readonly style="background:#F8FAFF;font-weight:700" class="amt-input"></td><td><button onclick="this.closest('tr').remove();calcTotals('${prefix}')" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:16px">🗑️</button></td>`;
   tbody.appendChild(tr);
 }
 function fillRowFromProduct(sel, prefix, rowId) {
@@ -558,10 +755,13 @@ function getGrandFromTable(prefix) {
   return {subtotal:s,discount:d,gstTotal:g,grand:s-d+g};
 }
 function populateCustomerDropdowns() {
-  const opts = '<option value="">-- Select Customer --</option>' + DB.customers.map(c=>`<option value="${c.id}">${c.name} \u2014 ${c.phone}</option>`).join('');
+  const opts = '<option value="">-- Select Customer --</option>' + DB.customers.map(c=>`<option value="${c.id}">${c.name} — ${c.phone}</option>`).join('');
   document.getElementById('q-customer').innerHTML = opts;
   document.getElementById('i-customer').innerHTML = opts;
+  document.getElementById('amc-customer').innerHTML = opts;
 }
+
+// ----------- QUOTATIONS -----------
 let editQuotId = null;
 function openQuotationModal() {
   editQuotId = null;
@@ -643,12 +843,14 @@ function renderQuotations() {
   const q = document.getElementById('quot-search').value.toLowerCase();
   const list = [...DB.quotations].reverse().filter(x => { const c=DB.customers.find(cu=>cu.id===x.customerId); return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q); });
   const tbody = document.getElementById('quotations-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83d\udccb</div><h3>No Quotations Yet</h3><p>Create your first quotation</p></div></td></tr>`; return; }
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">📋</div><h3>No Quotations Yet</h3></div></td></tr>`; return; }
   tbody.innerHTML = list.map(q => {
     const c=DB.customers.find(x=>x.id===q.customerId), badge=q.status==='Accepted'?'success':q.status==='Sent'?'info':q.status==='Rejected'?'danger':'gray';
-    return `<tr><td><span class="highlight-blue">${q.no}</span></td><td>${fmtDate(q.date)}</td><td><strong>${c?c.name:'\u2014'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td>${fmtDate(q.validTill)}</td><td><strong>${fmt(q.grand)}</strong></td><td><span class="badge badge-${badge}">${q.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('quotation','${q.id}')">\ud83d\udc41\ufe0f</button> <button class="btn btn-sm btn-ghost" onclick="editQuotation('${q.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-success" onclick="convertToInvoice('${q.id}')" title="Convert to Invoice">\ud83d\udd04</button> <button class="btn btn-sm btn-danger" onclick="deleteQuotation('${q.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`;
+    return `<tr><td><span class="highlight-blue">${q.no}</span></td><td>${fmtDate(q.date)}</td><td><strong>${c?c.name:'—'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td>${fmtDate(q.validTill)}</td><td><strong>${fmt(q.grand)}</strong></td><td><span class="badge badge-${badge}">${q.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('quotation','${q.id}')">👁️</button> <button class="btn btn-sm btn-ghost" onclick="editQuotation('${q.id}')">✏️</button> <button class="btn btn-sm btn-success" onclick="convertToInvoice('${q.id}')" title="Convert to Invoice">🔄</button> <button class="btn btn-sm btn-danger" onclick="deleteQuotation('${q.id}')">🗑️</button></td></tr>`;
   }).join('');
 }
+
+// ----------- INVOICES -----------
 let editInvoiceId = null;
 function openInvoiceModal() {
   editInvoiceId = null;
@@ -705,24 +907,313 @@ function renderInvoices() {
   const q = document.getElementById('inv-search').value.toLowerCase();
   const list = [...DB.invoices].reverse().filter(x => { const c=DB.customers.find(cu=>cu.id===x.customerId); return (x.no+(c?c.name:'')+x.status).toLowerCase().includes(q); });
   const tbody = document.getElementById('invoices-table-body');
-  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">\ud83e\uddfe</div><h3>No Invoices Yet</h3><p>Create your first invoice</p></div></td></tr>`; return; }
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-icon">🧾</div><h3>No Invoices Yet</h3></div></td></tr>`; return; }
   tbody.innerHTML = list.map(inv => {
     const c=DB.customers.find(x=>x.id===inv.customerId), badge=inv.status==='Paid'?'success':inv.status==='Partial'?'warning':'danger', overdue=inv.status!=='Paid'&&new Date(inv.dueDate)<new Date();
-    return `<tr><td><span class="highlight-blue">${inv.no}</span></td><td>${fmtDate(inv.date)}</td><td><strong>${c?c.name:'\u2014'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td style="color:${overdue?'var(--danger)':'inherit'}">${fmtDate(inv.dueDate)}${overdue?' \u26a0\ufe0f':''}</td><td><strong>${fmt(inv.grand)}</strong></td><td><span class="badge badge-${badge}">${inv.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('invoice','${inv.id}')">\ud83d\udc41\ufe0f</button> <button class="btn btn-sm btn-ghost" onclick="editInvoice('${inv.id}')">\u270f\ufe0f</button> <button class="btn btn-sm btn-danger" onclick="deleteInvoice('${inv.id}')">\ud83d\uddd1\ufe0f</button></td></tr>`;
+    return `<tr><td><span class="highlight-blue">${inv.no}</span></td><td>${fmtDate(inv.date)}</td><td><strong>${c?c.name:'—'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td><td style="color:${overdue?'var(--danger)':'inherit'}">${fmtDate(inv.dueDate)}${overdue?' ⚠️':''}</td><td><strong>${fmt(inv.grand)}</strong></td><td><span class="badge badge-${badge}">${inv.status}</span></td><td style="white-space:nowrap"><button class="btn btn-sm btn-outline" onclick="previewDoc('invoice','${inv.id}')">👁️</button> <button class="btn btn-sm btn-ghost" onclick="editInvoice('${inv.id}')">✏️</button> <button class="btn btn-sm btn-danger" onclick="deleteInvoice('${inv.id}')">🗑️</button></td></tr>`;
   }).join('');
 }
+
+// =========== AMC MODULE ===========
+let editAMCId = null;
+
+function calcAMCEnd() {
+  const start = document.getElementById('amc-start').value;
+  const months = parseInt(document.getElementById('amc-duration').value)||12;
+  if(start) document.getElementById('amc-end').value = addMonths(start, months);
+}
+function calcAMCGST() {
+  const amt = parseFloat(document.getElementById('amc-amount').value)||0;
+  const gst = parseFloat(document.getElementById('amc-gst').value)||0;
+  const total = amt + amt*gst/100;
+  document.getElementById('amc-total').value = '₹' + total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+}
+
+function addAMCUnit(data) {
+  const container = document.getElementById('amc-units-container');
+  const id = uid();
+  const div = document.createElement('div');
+  div.className = 'amc-unit-row';
+  div.id = 'unit-'+id;
+  div.innerHTML = `
+    <div class="form-group"><label style="font-size:11px">AC Brand & Model</label><input placeholder="e.g. Daikin 1.5T Split" value="${data?data.model||'':''}" class="unit-model"></div>
+    <div class="form-group"><label style="font-size:11px">Capacity (Ton)</label>
+      <select class="unit-cap">
+        <option ${data&&data.capacity==='0.75'?'selected':''} value="0.75">0.75 Ton</option>
+        <option ${data&&data.capacity==='1'?'selected':''} value="1">1.0 Ton</option>
+        <option ${!data||data.capacity==='1.5'?'selected':''} value="1.5">1.5 Ton</option>
+        <option ${data&&data.capacity==='2'?'selected':''} value="2">2.0 Ton</option>
+        <option ${data&&data.capacity==='2.5'?'selected':''} value="2.5">2.5 Ton</option>
+      </select>
+    </div>
+    <div class="form-group"><label style="font-size:11px">AC Type</label>
+      <select class="unit-type">
+        <option ${!data||data.acType==='Split'?'selected':''}>Split</option>
+        <option ${data&&data.acType==='Window'?'selected':''}>Window</option>
+        <option ${data&&data.acType==='Cassette'?'selected':''}>Cassette</option>
+        <option ${data&&data.acType==='Tower'?'selected':''}>Tower</option>
+      </select>
+    </div>
+    <div class="form-group"><label style="font-size:11px">Location / Room</label><input placeholder="e.g. Bedroom, Hall" value="${data?data.location||'':''}" class="unit-loc"></div>
+    <button onclick="document.getElementById('unit-${id}').remove()" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:18px;margin-top:20px">🗑️</button>`;
+  container.appendChild(div);
+}
+
+function getAMCUnits() {
+  return [...document.querySelectorAll('#amc-units-container .amc-unit-row')].map(div => ({
+    model: div.querySelector('.unit-model').value,
+    capacity: div.querySelector('.unit-cap').value,
+    acType: div.querySelector('.unit-type').value,
+    location: div.querySelector('.unit-loc').value
+  }));
+}
+
+function openAMCModal() {
+  editAMCId = null;
+  document.getElementById('amc-modal-title').textContent = '📄 New AMC Contract';
+  document.getElementById('amc-no').value = 'AMC-' + String(DB.counters.amc).padStart(4,'0');
+  document.getElementById('amc-date').value = today();
+  document.getElementById('amc-start').value = today();
+  document.getElementById('amc-duration').value = '12';
+  calcAMCEnd();
+  document.getElementById('amc-plan').value = 'Standard';
+  document.getElementById('amc-status').value = 'Active';
+  document.getElementById('amc-visits').value = '2';
+  document.getElementById('amc-amount').value = '';
+  document.getElementById('amc-gst').value = '18';
+  document.getElementById('amc-total').value = '';
+  document.getElementById('amc-paymode').value = 'Cash';
+  document.getElementById('amc-paystatus').value = 'Paid';
+  document.getElementById('amc-terms').value = DB.company.amcTerms;
+  document.getElementById('amc-notes').value = '';
+  document.getElementById('amc-units-container').innerHTML = '';
+  // Reset checkboxes
+  document.querySelectorAll('#amc-inclusions-grid input[type=checkbox]').forEach(cb => { cb.checked = ['AC Filter Cleaning','Coil Cleaning (Indoor)','Coil Cleaning (Outdoor)','Gas Pressure Check','Electrical Connections Check','Water Drainage Check','Thermostat & Remote Check','Performance Testing','Emergency Breakdown Calls'].includes(cb.value); });
+  document.querySelectorAll('#amc-exclusions-grid input[type=checkbox]').forEach(cb => { cb.checked = ['Gas Refilling / Recharging','Spare Parts / Components','Compressor Replacement','PCB Board Repair / Replacement','Fan Motor Replacement','Physical/Accidental Damage','Power Fluctuation Damage'].includes(cb.value); });
+  populateCustomerDropdowns();
+  addAMCUnit();
+  openModal('modal-amc');
+}
+
+function editAMC(id) {
+  const a = DB.amc.find(x=>x.id===id); if(!a) return;
+  editAMCId = id;
+  document.getElementById('amc-modal-title').textContent = '✏️ Edit AMC Contract';
+  document.getElementById('amc-no').value = a.no;
+  document.getElementById('amc-date').value = a.date;
+  document.getElementById('amc-start').value = a.startDate;
+  document.getElementById('amc-end').value = a.endDate;
+  document.getElementById('amc-plan').value = a.plan;
+  document.getElementById('amc-status').value = a.status;
+  document.getElementById('amc-visits').value = a.visits;
+  document.getElementById('amc-amount').value = a.amount;
+  document.getElementById('amc-gst').value = a.gstRate;
+  document.getElementById('amc-duration').value = a.duration||'12';
+  calcAMCGST();
+  document.getElementById('amc-paymode').value = a.payMode;
+  document.getElementById('amc-paystatus').value = a.payStatus;
+  document.getElementById('amc-terms').value = a.terms||DB.company.amcTerms;
+  document.getElementById('amc-notes').value = a.notes||'';
+  populateCustomerDropdowns();
+  document.getElementById('amc-customer').value = a.customerId;
+  document.getElementById('amc-units-container').innerHTML = '';
+  (a.units||[]).forEach(u => addAMCUnit(u));
+  document.querySelectorAll('#amc-inclusions-grid input[type=checkbox]').forEach(cb => { cb.checked = (a.inclusions||[]).includes(cb.value); });
+  document.querySelectorAll('#amc-exclusions-grid input[type=checkbox]').forEach(cb => { cb.checked = (a.exclusions||[]).includes(cb.value); });
+  openModal('modal-amc');
+}
+
+function saveAMC() {
+  const custId = document.getElementById('amc-customer').value;
+  if(!custId) { toast('Please select a customer','error'); return; }
+  const amtRaw = parseFloat(document.getElementById('amc-amount').value);
+  if(isNaN(amtRaw)||amtRaw<=0) { toast('Please enter contract amount','error'); return; }
+  const gstRate = parseFloat(document.getElementById('amc-gst').value)||0;
+  const totalAmt = amtRaw + amtRaw*gstRate/100;
+  const inclusions = [...document.querySelectorAll('#amc-inclusions-grid input[type=checkbox]:checked')].map(c=>c.value);
+  const exclusions = [...document.querySelectorAll('#amc-exclusions-grid input[type=checkbox]:checked')].map(c=>c.value);
+  const units = getAMCUnits();
+  const data = {
+    no: document.getElementById('amc-no').value,
+    date: document.getElementById('amc-date').value,
+    startDate: document.getElementById('amc-start').value,
+    endDate: document.getElementById('amc-end').value,
+    duration: document.getElementById('amc-duration').value,
+    plan: document.getElementById('amc-plan').value,
+    status: document.getElementById('amc-status').value,
+    customerId: custId,
+    visits: parseInt(document.getElementById('amc-visits').value)||2,
+    amount: amtRaw,
+    gstRate,
+    totalAmount: totalAmt,
+    payMode: document.getElementById('amc-paymode').value,
+    payStatus: document.getElementById('amc-paystatus').value,
+    terms: document.getElementById('amc-terms').value,
+    notes: document.getElementById('amc-notes').value,
+    inclusions,
+    exclusions,
+    units
+  };
+  if(editAMCId) { const idx=DB.amc.findIndex(x=>x.id===editAMCId); DB.amc[idx]={...DB.amc[idx],...data}; toast('AMC Contract updated'); }
+  else { DB.amc.push({id:uid(),...data}); DB.counters.amc++; toast('AMC Contract created'); }
+  saveDB(); closeModal('modal-amc'); renderAMC();
+}
+
+function deleteAMC(id) {
+  if(!confirm('Delete this AMC contract?')) return;
+  DB.amc = DB.amc.filter(a=>a.id!==id);
+  saveDB(); renderAMC(); toast('AMC Contract deleted');
+}
+
+function renderAMC() {
+  const q = document.getElementById('amc-search').value.toLowerCase();
+  const list = [...DB.amc].reverse().filter(x => {
+    const c=DB.customers.find(cu=>cu.id===x.customerId);
+    return (x.no+(c?c.name:'')+x.status+x.plan).toLowerCase().includes(q);
+  });
+  const tbody = document.getElementById('amc-table-body');
+  if(!list.length) { tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state"><div class="empty-icon">📄</div><h3>No AMC Contracts Yet</h3><p>Create your first AMC contract</p></div></td></tr>`; return; }
+  tbody.innerHTML = list.map(a => {
+    const c=DB.customers.find(x=>x.id===a.customerId);
+    const badge=a.status==='Active'?'success':a.status==='Expired'?'danger':a.status==='Cancelled'?'gray':'warning';
+    const planBadge=a.plan==='Premium'?'amc':a.plan==='Standard'?'info':'gray';
+    const expiring = a.status==='Active' && new Date(a.endDate) < new Date(Date.now()+30*24*3600*1000);
+    return `<tr>
+      <td><span class="highlight-amc">${a.no}</span></td>
+      <td><strong>${c?c.name:'—'}</strong><div style="font-size:11px;color:var(--text-muted)">${c?c.phone:''}</div></td>
+      <td><strong>${(a.units||[]).length}</strong> unit(s)<div style="font-size:11px;color:var(--text-muted)">${(a.units||[]).map(u=>u.model||u.acType).filter(Boolean).slice(0,2).join(', ')}</div></td>
+      <td>${fmtDate(a.startDate)}</td>
+      <td style="color:${expiring?'var(--warning)':'inherit'}">${fmtDate(a.endDate)}${expiring?' ⚠️':''}</td>
+      <td><strong>${fmt(a.totalAmount)}</strong><div style="font-size:11px;color:var(--text-muted)">${a.payStatus}</div></td>
+      <td><span class="badge badge-${planBadge}">${a.plan}</span></td>
+      <td><span class="badge badge-${badge}">${a.status}</span></td>
+      <td style="white-space:nowrap">
+        <button class="btn btn-sm" style="background:var(--amc-light);color:var(--amc)" onclick="previewAMC('${a.id}')">👁️</button>
+        <button class="btn btn-sm btn-ghost" onclick="editAMC('${a.id}')">✏️</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteAMC('${a.id}')">🗑️</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function previewAMC(id) {
+  const a = DB.amc.find(x=>x.id===id); if(!a) return;
+  const c=DB.customers.find(x=>x.id===a.customerId)||{}, co=DB.company;
+  const unitsHTML = (a.units||[]).length ? `
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px">
+      <thead><tr style="background:#F3F0FF"><th style="padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;color:#7C3AED;border-bottom:2px solid #DDD6FE">#</th><th style="padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;color:#7C3AED;border-bottom:2px solid #DDD6FE">Brand / Model</th><th style="padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;color:#7C3AED;border-bottom:2px solid #DDD6FE">Capacity</th><th style="padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;color:#7C3AED;border-bottom:2px solid #DDD6FE">Type</th><th style="padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;color:#7C3AED;border-bottom:2px solid #DDD6FE">Location</th></tr></thead>
+      <tbody>${(a.units||[]).map((u,i)=>`<tr><td style="padding:8px 10px;border-bottom:1px solid #EDE9FE">${i+1}</td><td style="padding:8px 10px;border-bottom:1px solid #EDE9FE"><strong>${u.model||'—'}</strong></td><td style="padding:8px 10px;border-bottom:1px solid #EDE9FE">${u.capacity} Ton</td><td style="padding:8px 10px;border-bottom:1px solid #EDE9FE">${u.acType}</td><td style="padding:8px 10px;border-bottom:1px solid #EDE9FE">${u.location||'—'}</td></tr>`).join('')}</tbody>
+    </table>` : '<p style="color:#9CA3AF;font-size:13px;font-style:italic">No units specified</p>';
+
+  const incHTML = (a.inclusions||[]).map(i=>`<li style="padding:4px 0;font-size:13px;color:#1A1F36">✅ ${i}</li>`).join('');
+  const excHTML = (a.exclusions||[]).map(e=>`<li style="padding:4px 0;font-size:13px;color:#6B7280">❌ ${e}</li>`).join('');
+
+  const html = `<div id="printable-doc" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#7C3AED,#4C1D95);color:#fff;padding:28px 32px;display:flex;justify-content:space-between;align-items:flex-start;border-radius:0">
+      <div>
+        <img src="${LOGO_URI}" style="width:60px;height:46px;object-fit:contain;background:#fff;border-radius:6px;padding:3px;margin-bottom:10px;display:block">
+        <div style="font-size:22px;font-weight:800">${co.name}</div>
+        <div style="font-size:12px;opacity:.85;margin-top:6px;line-height:2">${co.owner}<br>${co.address}<br>📞 ${co.phone} | ✉️ ${co.email}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;opacity:.6;letter-spacing:3px;font-weight:700">ANNUAL MAINTENANCE</div>
+        <div style="font-size:28px;font-weight:800;letter-spacing:2px;opacity:.25;margin-top:2px">CONTRACT</div>
+        <div style="font-size:32px;font-weight:900;letter-spacing:-1px;margin-top:4px">${a.no}</div>
+        <div style="font-size:12px;opacity:.8;margin-top:8px">GSTIN: ${co.gstin}</div>
+        <div style="margin-top:8px"><span style="background:${a.status==='Active'?'#10B981':a.status==='Expired'?'#EF4444':'#F59E0B'};color:#fff;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:700">${a.status}</span></div>
+      </div>
+    </div>
+
+    <!-- Contract info bar -->
+    <div style="background:#F3F0FF;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:2px solid #DDD6FE">
+      ${[['Plan',a.plan+' AMC'],['Start Date',fmtDate(a.startDate)],['End Date',fmtDate(a.endDate)],['Services/Year',a.visits+' Visits']].map(([l,v])=>`<div style="padding:14px 18px;border-right:1px solid #DDD6FE"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7C3AED;margin-bottom:4px">${l}</div><div style="font-size:14px;font-weight:700;color:#1A1F36">${v}</div></div>`).join('')}
+    </div>
+
+    <!-- Customer & Financial -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 32px;border-bottom:1px solid #EDE9FE">
+      <div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#7C3AED;letter-spacing:1px;margin-bottom:8px">Customer Details</div>
+        <div style="font-size:16px;font-weight:800;color:#1A1F36">${c.name||'—'}</div>
+        <div style="font-size:13px;color:#4B5563;margin-top:4px;line-height:1.8">${(c.address||'').replace(/\n/g,'<br>')}${c.phone?'<br>📞 '+c.phone:''}</div>
+        ${c.gstin?`<div style="font-size:12px;color:#7C3AED;margin-top:4px;font-weight:600">GSTIN: ${c.gstin}</div>`:''}
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#7C3AED;letter-spacing:1px;margin-bottom:8px">Payment Summary</div>
+        <table style="font-size:13px;width:100%">
+          <tr><td style="color:#6B7280;padding:4px 0;padding-right:20px">Contract Amount</td><td style="font-weight:700">${fmt(a.amount)}</td></tr>
+          <tr><td style="color:#6B7280;padding:4px 0;padding-right:20px">GST (${a.gstRate}%)</td><td style="font-weight:700">${fmt(a.amount*a.gstRate/100)}</td></tr>
+          <tr><td style="border-top:2px solid #7C3AED;padding-top:8px;color:#7C3AED;font-weight:700;font-size:14px">Total Amount</td><td style="border-top:2px solid #7C3AED;padding-top:8px;font-size:16px;font-weight:800;color:#7C3AED">${fmt(a.totalAmount)}</td></tr>
+          <tr><td style="color:#6B7280;padding:4px 0">Payment Mode</td><td style="font-weight:600">${a.payMode}</td></tr>
+          <tr><td style="color:#6B7280;padding:4px 0">Payment Status</td><td><span style="background:${a.payStatus==='Paid'?'#D1FAE5':a.payStatus==='Unpaid'?'#FEE2E2':'#FEF3C7'};color:${a.payStatus==='Paid'?'#059669':a.payStatus==='Unpaid'?'#DC2626':'#D97706'};padding:2px 10px;border-radius:99px;font-size:11.5px;font-weight:700">${a.payStatus}</span></td></tr>
+          <tr><td style="color:#6B7280;padding:4px 0">Amount in Words</td><td style="font-style:italic;color:#7C3AED;font-size:12px;font-weight:600">${numToWords(Math.round(a.totalAmount))}</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- AC Units -->
+    <div style="padding:18px 32px;border-bottom:1px solid #EDE9FE">
+      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7C3AED;margin-bottom:10px">❄️ AC Units Under This Contract</div>
+      ${unitsHTML}
+    </div>
+
+    <!-- Inclusions & Exclusions -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #EDE9FE">
+      <div style="padding:18px 32px;border-right:1px solid #EDE9FE">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#059669;margin-bottom:10px">✅ Services Included</div>
+        <ul style="list-style:none;padding:0">${incHTML||'<li style="color:#9CA3AF;font-size:13px">None specified</li>'}</ul>
+      </div>
+      <div style="padding:18px 32px">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#DC2626;margin-bottom:10px">❌ Not Covered (Exclusions)</div>
+        <ul style="list-style:none;padding:0">${excHTML||'<li style="color:#9CA3AF;font-size:13px">None specified</li>'}</ul>
+      </div>
+    </div>
+
+    <!-- Terms -->
+    ${a.terms?`<div style="padding:18px 32px;border-bottom:1px solid #EDE9FE">
+      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7C3AED;margin-bottom:10px">📝 Terms &amp; Conditions</div>
+      <div style="font-size:12.5px;color:#4B5563;line-height:2;white-space:pre-line">${a.terms}</div>
+    </div>`:''}
+
+    ${a.notes?`<div style="padding:14px 32px;background:#FFFBEB;border-bottom:1px solid #FDE68A">
+      <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:4px">📌 Special Remarks</div>
+      <div style="font-size:13px;color:#78350F">${a.notes}</div>
+    </div>`:''}
+
+    <!-- Footer / Signature -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px 32px;border-top:2px solid #EDE9FE">
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#1A1F36;margin-bottom:6px">Customer Acceptance</div>
+        <div style="font-size:12px;color:#6B7280;line-height:1.8">By signing below, the customer agrees to all<br>terms and conditions of this AMC contract.</div>
+        <div style="margin-top:32px;border-top:1.5px solid #1A1F36;padding-top:8px;font-size:12px;color:#6B7280">Customer Signature &amp; Date<br><strong style="color:#1A1F36">${c.name||''}</strong></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;font-weight:600;color:#1A1F36;margin-bottom:6px">For ${co.name}</div>
+        <div style="font-size:12px;color:#6B7280;line-height:1.8">Authorised Signatory</div>
+        <div style="margin-top:32px;border-top:1.5px solid #7C3AED;padding-top:8px;font-size:12px;color:#6B7280">Signature &amp; Stamp<br><strong style="color:#1A1F36">${co.owner}</strong></div>
+      </div>
+    </div>
+    <div style="background:#F3F0FF;padding:10px 32px;text-align:center;font-size:11.5px;color:#7C3AED;border-radius:0 0 18px 18px">This is a computer-generated AMC contract by ${co.name}. Contract No: ${a.no}</div>
+  </div>`;
+
+  document.getElementById('preview-content').innerHTML = html;
+  document.getElementById('preview-title').textContent = `AMC Contract: ${a.no}`;
+  openModal('modal-preview');
+}
+
+// ----------- PREVIEW (Quotation/Invoice) -----------
 function previewDoc(type, id) {
   const doc = type==='invoice' ? DB.invoices.find(x=>x.id===id) : DB.quotations.find(x=>x.id===id);
   if(!doc) return;
   const c=DB.customers.find(x=>x.id===doc.customerId)||{}, co=DB.company;
   const isInv=type==='invoice', docColor=isInv?'#0057FF':'#059669', docLabel=isInv?'TAX INVOICE':'QUOTATION';
-  const itemsHTML = doc.items.map((item,i) => `<tr><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px">${i+1}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px"><strong>${item.name}</strong>${item.desc?`<br><span style="color:#6B7280;font-size:11.5px">${item.desc}</span>`:''}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.hsn||'\u2014'}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.qty} ${item.unit}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right">${fmt(item.rate)}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.disc}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.gst}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right;font-weight:700">${fmt(item.total)}</td></tr>`).join('');
+  const itemsHTML = doc.items.map((item,i) => `<tr><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px">${i+1}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px"><strong>${item.name}</strong>${item.desc?`<br><span style="color:#6B7280;font-size:11.5px">${item.desc}</span>`:''}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.hsn||'—'}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.qty} ${item.unit}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right">${fmt(item.rate)}</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.disc}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:center">${item.gst}%</td><td style="padding:10px 12px;border-bottom:1px solid #E5E9F2;font-size:13px;text-align:right;font-weight:700">${fmt(item.total)}</td></tr>`).join('');
   const html = `<div id="printable-doc" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff">
     <div style="background:${docColor};color:#fff;padding:28px 32px;display:flex;justify-content:space-between;align-items:flex-start">
       <div>
         <div style="margin-bottom:8px"><img src="${LOGO_URI}" style="width:60px;height:46px;object-fit:contain;background:#fff;border-radius:6px;padding:3px"></div>
-        <div style="font-size:22px;font-weight:800;letter-spacing:-0.5px">${co.name}</div>
-        <div style="font-size:12px;opacity:.85;margin-top:6px;line-height:2">${co.owner}<br>${co.address}<br>\ud83d\udcde ${co.phone} | \u2709\ufe0f ${co.email}</div>
+        <div style="font-size:22px;font-weight:800">${co.name}</div>
+        <div style="font-size:12px;opacity:.85;margin-top:6px;line-height:2">${co.owner}<br>${co.address}<br>📞 ${co.phone} | ✉️ ${co.email}</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:28px;font-weight:800;letter-spacing:2px;opacity:.25">${docLabel}</div>
@@ -733,13 +1224,13 @@ function previewDoc(type, id) {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 32px;border-bottom:2px solid #F0F4FF">
       <div>
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#6B7280;letter-spacing:1px;margin-bottom:8px">Bill To</div>
-        <div style="font-size:15px;font-weight:800;color:#1A1F36">${c.name||'\u2014'}</div>
-        <div style="font-size:13px;color:#4B5563;margin-top:4px;line-height:1.8">${(c.address||'').replace(/\n/g,'<br>')}${c.phone?'<br>\ud83d\udcde '+c.phone:''}</div>
+        <div style="font-size:15px;font-weight:800;color:#1A1F36">${c.name||'—'}</div>
+        <div style="font-size:13px;color:#4B5563;margin-top:4px;line-height:1.8">${(c.address||'').replace(/\n/g,'<br>')}${c.phone?'<br>📞 '+c.phone:''}</div>
         ${c.gstin?`<div style="font-size:12px;color:#2563EB;margin-top:4px;font-weight:600">GSTIN: ${c.gstin}</div>`:''}
       </div>
       <div style="text-align:right">
         <table style="margin-left:auto;font-size:13px">
-          <tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">${isInv?'Invoice':'Quotation'} No.</td><td style="font-weight:700;color:#0057FF;font-family:monospace">${doc.no}</td></tr>
+          <tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">${isInv?'Invoice':'Quotation'} No.</td><td style="font-weight:700;color:${docColor};font-family:monospace">${doc.no}</td></tr>
           <tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">Date</td><td style="font-weight:600">${fmtDate(doc.date)}</td></tr>
           ${isInv?`<tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">Due Date</td><td style="font-weight:600">${fmtDate(doc.dueDate)}</td></tr>`:`<tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">Valid Till</td><td style="font-weight:600">${fmtDate(doc.validTill)}</td></tr>`}
           <tr><td style="color:#6B7280;padding:4px 0;padding-right:16px">Status</td><td><span style="background:${doc.status==='Paid'||doc.status==='Accepted'?'#D1FAE5':doc.status==='Unpaid'||doc.status==='Rejected'?'#FEE2E2':'#FEF3C7'};color:${doc.status==='Paid'||doc.status==='Accepted'?'#059669':doc.status==='Unpaid'||doc.status==='Rejected'?'#DC2626':'#D97706'};padding:2px 10px;border-radius:99px;font-size:11.5px;font-weight:700">${doc.status}</span></td></tr>
@@ -774,25 +1265,45 @@ function previewDoc(type, id) {
   document.getElementById('preview-title').textContent = `${isInv?'Invoice':'Quotation'}: ${doc.no}`;
   openModal('modal-preview');
 }
+
 function printDocument() {
   const content = document.getElementById('printable-doc').innerHTML;
   const win = window.open('','_blank','width=900,height=700');
   win.document.write(`<!DOCTYPE html><html><head><title>Air Cool Document</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{margin:0;size:A4}@media print{body{padding:0}}</style></head><body>${content}<script>window.onload=function(){window.print();window.onafterprint=function(){window.close()}}<\/script></body></html>`);
   win.document.close();
 }
+
+// ----------- SETTINGS -----------
 function syncSettingsForm() {
   const co = DB.company;
   if(document.getElementById('s-name')) {
     ['name','owner','address','phone','email','gstin','state','bank','account','ifsc','terms'].forEach(k => { const el=document.getElementById('s-'+k); if(el) el.value=co[k]||''; });
+    const amcEl = document.getElementById('s-amc-terms');
+    if(amcEl) amcEl.value = co.amcTerms||'';
   }
 }
 function saveSettings() {
-  DB.company = { name:document.getElementById('s-name').value.trim(), owner:document.getElementById('s-owner').value.trim(), address:document.getElementById('s-address').value.trim(), phone:document.getElementById('s-phone').value.trim(), email:document.getElementById('s-email').value.trim(), gstin:document.getElementById('s-gstin').value.trim(), state:document.getElementById('s-state').value.trim(), bank:document.getElementById('s-bank').value.trim(), account:document.getElementById('s-account').value.trim(), ifsc:document.getElementById('s-ifsc').value.trim(), terms:document.getElementById('s-terms').value.trim() };
+  DB.company = {
+    name:document.getElementById('s-name').value.trim(),
+    owner:document.getElementById('s-owner').value.trim(),
+    address:document.getElementById('s-address').value.trim(),
+    phone:document.getElementById('s-phone').value.trim(),
+    email:document.getElementById('s-email').value.trim(),
+    gstin:document.getElementById('s-gstin').value.trim(),
+    state:document.getElementById('s-state').value.trim(),
+    bank:document.getElementById('s-bank').value.trim(),
+    account:document.getElementById('s-account').value.trim(),
+    ifsc:document.getElementById('s-ifsc').value.trim(),
+    terms:document.getElementById('s-terms').value.trim(),
+    amcTerms:document.getElementById('s-amc-terms').value.trim()
+  };
   saveDB();
   toast('Company settings saved!');
-  document.querySelector('.company-badge').innerHTML = `<strong>${DB.company.name}</strong>${DB.company.owner}<br>GSTIN: ${DB.company.gstin}`;
+  document.getElementById('sb-name').textContent = DB.company.name;
+  document.getElementById('sb-owner').textContent = DB.company.owner;
+  document.getElementById('sb-gstin').textContent = DB.company.gstin;
 }
-document.querySelector('[onclick="openModal(\'modal-customer\')"]').setAttribute('onclick','openModal_customer_new()');
+
 loadDB();
 updateDashboard();
 </script>
